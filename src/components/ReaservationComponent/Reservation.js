@@ -1,9 +1,11 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import HeaderTemplate from "../Template/Header"
 import { Grid, Segment,  Header, Dropdown, Icon } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import {initialDoctorInfo, getDoctorInfo} from "../../actions";
 import CardList from "./CardList";
 import CurrentReservation from "./CurrentReservation"
+
 
 class ReservationComponent extends Component{
     constructor(props){
@@ -23,8 +25,16 @@ class ReservationComponent extends Component{
                     { key: 6, text: '한방의학과', value: 6 },
                     { key: 7, text: '치과', value: 7 },
                     { key: 8, text: '비뇨기과', value: 8},
-                ]
-        }
+            ],
+            doctorsInfo:[
+                {name:"찬호김", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+                {name:"이승빈", major:"성형외과", thmbnail:"", description:"대한민국 최고 존잘남이 탄생시키는 너의 얼굴"},
+                {name:"울랄라", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+                {name:"발할라", major:"피부과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+            ],
+            
+        };
+        this.state.initialDoctorsInfo(this.state.doctorsInfo);
     }
     render(){
         return(
@@ -50,7 +60,7 @@ class ReservationComponent extends Component{
                                 <CardList/>
                             </Grid.Column>
                             <Grid.Column width={10}>
-                                <Segment width={10} style={{paddingTop:"25em", paddingLeft:"17em",minHeight:"52.3em"}}>
+                                {/* <Segment width={10} style={{paddingTop:"25em", paddingLeft:"17em",minHeight:"52.3em"}}>
                                     <div style={{display:"flex"}}>
                                         <Icon name="plus circle" color="grey" size="big" style={{paddingTop:"1em"}}/>
                                         <Header
@@ -61,9 +71,9 @@ class ReservationComponent extends Component{
                                         </Header>
                                     </div>
 
-                                </Segment>
+                                </Segment> */}
                                 
-                                {/* <CurrentReservation/> */}
+                                <CurrentReservation/>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
@@ -72,5 +82,13 @@ class ReservationComponent extends Component{
         )
     }
 }
+
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        initialDoctorsInfo:(doctorsInfo) => dispatch(initialDoctorInfo(doctorsInfo))
+    }
+}
+
+ReservationComponent = connect(undefined)(ReservationComponent);
 
 export default ReservationComponent
