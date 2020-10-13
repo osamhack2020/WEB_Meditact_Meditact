@@ -34,7 +34,7 @@ class ReservationComponent extends Component{
             ],
             
         };
-        this.state.initialDoctorsInfo(this.state.doctorsInfo);
+        this.props.initialDoctorsInfo(this.state.doctorsInfo);
     }
     render(){
         return(
@@ -89,6 +89,6 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-ReservationComponent = connect(undefined)(ReservationComponent);
+ReservationComponent = connect(undefined, mapDispatchToProps)(ReservationComponent);
 
 export default ReservationComponent
