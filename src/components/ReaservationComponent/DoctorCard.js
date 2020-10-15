@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import HeaderTemplate from "../Template/Header"
-import { Grid, Segment, List, Header, Card, Image, Button } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import {Card, Image, Button } from 'semantic-ui-react'
+import {setDoctorcardIndex} from "../../actions";
 
 class DoctorCard extends Component{
     
     render(){
-        const {name, major, thumbnal, description} = this.props.doctorInfo;
+        const {key, name, major, thumbnal, description} = this.props.doctorInfo;
 
         return(
             <Card>
@@ -24,7 +24,7 @@ class DoctorCard extends Component{
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui two buttons'>
-                        <Button basic color='green'>
+                        <Button basic color='green' onClick={()=>this.props.setDoctorcard(key)}>
                             예약하기
                         </Button>
                         <Button basic color='red'>
@@ -36,4 +36,12 @@ class DoctorCard extends Component{
         )
     }
 }
+const mapDispatchToProps = (dispatch) =>{
+    return{
+        setDoctorcard:(selectedIndex) => dispatch(setDoctorcardIndex(selectedIndex))
+    }
+}
+
+DoctorCard = connect(undefined, mapDispatchToProps)(DoctorCard);
+
 export default DoctorCard;

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import HeaderTemplate from "../Template/Header"
 import { Grid, Segment,  Header, Dropdown, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import {initialDoctorInfo, getDoctorInfo} from "../../actions";
+import {initialDoctorInfo} from "../../actions";
 import CardList from "./CardList";
 import CurrentReservation from "./CurrentReservation"
 
@@ -27,10 +27,10 @@ class ReservationComponent extends Component{
                     { key: 8, text: '비뇨기과', value: 8},
             ],
             doctorsInfo:[
-                {name:"찬호김", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
-                {name:"이승빈", major:"성형외과", thmbnail:"", description:"대한민국 최고 존잘남이 탄생시키는 너의 얼굴"},
-                {name:"울랄라", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
-                {name:"발할라", major:"피부과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+                {key: 1, name:"찬호김", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+                {key: 2, name:"이승빈", major:"성형외과", thmbnail:"", description:"대한민국 최고 존잘남이 탄생시키는 너의 얼굴"},
+                {key: 3, name:"울랄라", major:"정형외과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
+                {key: 4, name:"발할라", major:"피부과", thmbnail:"", description:"orem ipsum dolor sit amet, consectetur adipiscing elit"},
             ],
             
         };
@@ -70,9 +70,7 @@ class ReservationComponent extends Component{
                                             CLICK CARD
                                         </Header>
                                     </div>
-
                                 </Segment> */}
-                                
                                 <CurrentReservation/>
                             </Grid.Column>
                         </Grid.Row>
