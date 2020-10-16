@@ -4,7 +4,8 @@ import
 { 
   MainPage,
   LoginPage,
-  ReservationPage
+  ReservationPage,
+  ChatBotPage
 
 } from './pages/index';
 
@@ -14,6 +15,7 @@ const App = ()=>(
     <Route exact path="/" component={MainPage}/>
     <Route exact path="/login" component={LoginPage}/>
     <Route exact path="/reservation" component={ReservationPage}/>
+    <Route exact path="/chatbot" component={ChatBotPage}/>
   </div>
 )
 

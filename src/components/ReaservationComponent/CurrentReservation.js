@@ -4,13 +4,6 @@ import { Grid, Segment, Image, Header, List, Button,Icon, Modal } from 'semantic
 
 class CurrentReservation extends Component{
     state ={
-        doctorInfo:{
-            name:"김찬호",
-            major:"정형외과",
-            medicalField:"감염과",//진료분야
-            career:["서울대학교 의과대학교 학사 수석 졸업","서울대학교 의과대학교 석사 졸업","서울대병원 성형외과 눈밑주름 제거 전문의"],//경력
-            paper:["abcd","efgh","asdas"],
-        },
         careerListSrc:null,
         paperListSrc:null,
         timeListSrc:null,
@@ -18,11 +11,11 @@ class CurrentReservation extends Component{
         reservationTime:["10 ~ 11", "13 ~ 14", "14 ~ 15", "15 ~ 16", "16 ~ 17", "17 ~ 18"],
     }
     makeList = ()=>{
-        const careers = this.state.doctorInfo.career.map(
+        const careers = this.props.selectedDoctor.career.map(
             (career) => 
                 <List.Item>{career}</List.Item>
         )
-        const papers = this.state.doctorInfo.paper.map(
+        const papers = this.props.selectedDoctor.paper.map(
             (paper)=>
                 <List.Item>{paper}</List.Item>
         )
@@ -50,7 +43,7 @@ class CurrentReservation extends Component{
     render(){
         return(
             <Segment>
-                <Grid container stackable style={{paddingTop:"2em"}}>
+                <Grid container stackable style={{paddingTop:"2em", minHeight: "52.3em"}}>
                     <Grid.Row>
                         <Grid.Column width={7}>
                             <Image src="https://image.freepik.com/free-vector/doctor-character-background_1270-84.jpg" fluid></Image>
@@ -59,7 +52,7 @@ class CurrentReservation extends Component{
                             <Header 
                                 style={{paddingBottom:'1.5em'}}
                                 as='h2'
-                                content={this.state.doctorInfo.name}
+                                content={this.props.selectedDoctor.name}
                             />
                             <div style={{display:"flex"}}>
                                 <div>
@@ -74,7 +67,7 @@ class CurrentReservation extends Component{
                                         style={{paddingLeft:"0.6em"}}
                                         as='h4' 
                                         color='grey'
-                                        content={this.state.doctorInfo.medicalField}
+                                        content={this.props.selectedDoctor.medicalField}
                                     />
                                 </div>
                             </div>
@@ -113,7 +106,12 @@ class CurrentReservation extends Component{
                                     <Modal
                                         closeIcon
                                         open={this.state.isOpen}
-                                        trigger={<Button  content={time}>{time}</Button>}
+                                        trigger={
+                                            <div style={{display:"flex"}}>
+                                                <Button  content={time}>{time}</Button>
+                                                <Header style={{paddingLeft:"0.6em"}} as='h4' color='grey'content={"0/4"}/>
+                                            </div>
+                                        }
                                         onClose={() => this.setState({isOpen:false})}
                                         onOpen={() => this.setState({isOpen:true})}
                                     >

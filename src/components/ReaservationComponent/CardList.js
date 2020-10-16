@@ -29,7 +29,6 @@ class CardList extends Component{
 }
 
 let mapStateToProps = (state) => {
-    console.log(state)
     return {
         doctorsInfo: state.doctor.doctorsInfo
     };
