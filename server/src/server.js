@@ -14,6 +14,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// static serving middleware
+app.use(express.static('public'));
+
 // cors policy setting
 app.use(cors());
 
