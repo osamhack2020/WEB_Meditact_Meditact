@@ -1,3 +1,4 @@
+import { Bubbles } from 'chat-bubble/component/Bubbles';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 
@@ -8,6 +9,8 @@ import
   ChatBotPage
 
 } from './pages/index';
+
+
 
 
 const App = ()=>(

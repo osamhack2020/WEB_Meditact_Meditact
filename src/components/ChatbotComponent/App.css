@@ -1,0 +1,10 @@
+body {
+    background: #dcdde0;
+  }
+  .bubble-container {
+    height: 100%;
+  }
+  .bubble-container .input-wrap textarea {
+    margin: 0;
+    width: calc(100% - 30px);
+  }
