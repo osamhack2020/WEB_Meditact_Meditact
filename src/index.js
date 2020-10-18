@@ -9,7 +9,6 @@ import { composeWithDevTools } from 'redux-devtools-extension'; // 리덕스 개
 
 const store = createStore(MeditactReducers, composeWithDevTools());
 const appElement = document.getElementById('root');
-
 ReactDOM.render(
     <Provider store = {store}>
         <Root />

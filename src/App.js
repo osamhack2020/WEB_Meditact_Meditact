@@ -1,4 +1,3 @@
-import { Bubbles } from 'chat-bubble/component/Bubbles';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import 
@@ -6,7 +5,8 @@ import
   MainPage,
   LoginPage,
   ReservationPage,
-  ChatBotPage
+  ChatBotPage,
+  MypagePage,
 
 } from './pages/index';
 
@@ -19,6 +19,8 @@ const App = ()=>(
     <Route exact path="/login" component={LoginPage}/>
     <Route exact path="/reservation" component={ReservationPage}/>
     <Route exact path="/chatbot" component={ChatBotPage}/>
+    <Route exact path="/mypage" component={MypagePage}/>
+
   </div>
 )
 

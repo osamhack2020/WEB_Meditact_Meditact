@@ -11,7 +11,7 @@ import {
   Segment,
   Visibility,
 } from 'semantic-ui-react'
-
+import mainBaner from "../../images/mainBaner.jpg";
 
 const {Media } = createMedia({
   breakpoints: {
@@ -46,6 +46,8 @@ class HeaderTemplate extends Component {
   render() {
     const { children, mobile } = this.props
     const { fixed } = this.state
+    const banerImage = this.props.banerInformation.banerImage;
+    console.log(banerImage);
     //페이지 전체 렌더링
     return (
       <Media greaterThan='mobile'>
@@ -56,7 +58,7 @@ class HeaderTemplate extends Component {
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em',backgroundImage:'url("https://www.medigatenews.com/file/news/139834")' }}
+            style={{ minHeight: 700, padding: '1em 0em',backgroundImage:`url(${mainBaner})` }}
             vertical
           >
             <Menu
@@ -66,7 +68,6 @@ class HeaderTemplate extends Component {
               size='large'
             >
               <Container>
-                {/* category focus는 페이지를 리디렉션할 때 state가 변경되기 때문에 서버에서 처리하는 방향으로. */}
                 <Link 
                 to="/" 
                 style={null}> 
