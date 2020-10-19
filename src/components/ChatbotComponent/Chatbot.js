@@ -1,13 +1,13 @@
 import React, {useEffect, useRef} from 'react';
-import {Bubbles, prepHTML} from "chat-bubble/component/Bubbles"
+//import {Bubbles, prepHTML} from "chat-bubble/component/Bubbles"
 import styled from "styled-components"
 
-import './App.css';
-import 'chat-bubble/component/styles/input.css'
-import 'chat-bubble/component/styles/reply.css'
-import 'chat-bubble/component/styles/says.css'
-import 'chat-bubble/component/styles/setup.css'
-import 'chat-bubble/component/styles/typing.css'
+// import './App.css';
+// import 'chat-bubble/component/styles/input.css'
+// import 'chat-bubble/component/styles/reply.css'
+// import 'chat-bubble/component/styles/says.css'
+// import 'chat-bubble/component/styles/setup.css'
+// import 'chat-bubble/component/styles/typing.css'
 
 // const inputBox = {
 //   body {
@@ -60,63 +60,63 @@ import 'chat-bubble/component/styles/typing.css'
 // }
 function Chanbot() {
 
-  const chat = useRef();
+  // const chat = useRef();
 
-  useEffect(() => {
-    prepHTML({relative_path: "../node_modules/chat-bubble/"})
-    document.body.style.background = "#dcdde0"
-    document.getElementsByClassName("bubble-container").height = "100vh";
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    window.chatWindow = new Bubbles(
-      chat.current, // ...passing HTML container element...
-      "chatWindow" // ...and name of the function as a parameter
-    );
-    window.chatWindow.typeInput()
+  // useEffect(() => {
+  //   prepHTML({relative_path: "../node_modules/chat-bubble/"})
+  //   document.body.style.background = "#dcdde0"
+  //   document.getElementsByClassName("bubble-container").height = "100vh";
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //   window.chatWindow = new Bubbles(
+  //     chat.current, // ...passing HTML container element...
+  //     "chatWindow" // ...and name of the function as a parameter
+  //   );
+  //   window.chatWindow.typeInput()
     
     
-    var convo = {
-      ice: {
-        says: ["Hi", "Would you like banana or ice cream?"],
-        reply: [
-          {
-            question: "Banana",
-            answer: "banana"
-          },
-          {
-            question: "Ice Cream",
-            answer: "ice-cream"
-          }
-        ]
-      },
-      banana: {
-        says: ["🍌"],
-        reply: [
-          {
-            question: "Start Over",
-            answer: "ice"
-          }
-        ]
-      },
-      "ice-cream": {
-        says: ["🍦"],
-        reply: [
-          {
-            question: "Start Over",
-            answer: "ice"
-          }
-        ]
-      }
-    }
+  //   var convo = {
+  //     ice: {
+  //       says: ["Hi", "Would you like banana or ice cream?"],
+  //       reply: [
+  //         {
+  //           question: "Banana",
+  //           answer: "banana"
+  //         },
+  //         {
+  //           question: "Ice Cream",
+  //           answer: "ice-cream"
+  //         }
+  //       ]
+  //     },
+  //     banana: {
+  //       says: ["🍌"],
+  //       reply: [
+  //         {
+  //           question: "Start Over",
+  //           answer: "ice"
+  //         }
+  //       ]
+  //     },
+  //     "ice-cream": {
+  //       says: ["🍦"],
+  //       reply: [
+  //         {
+  //           question: "Start Over",
+  //           answer: "ice"
+  //         }
+  //       ]
+  //     }
+  //   }
     
-    // pass JSON to your function and you're done!
-    window.chatWindow.talk(convo)
+  //   // pass JSON to your function and you're done!
+  //   window.chatWindow.talk(convo)
     
-    }, []
-  )
+  //   }, []
+  // )
 
   return (
-    <div id="chat" ref={chat}>
-
+    <div>
+      aa
     </div>
   );
 }
