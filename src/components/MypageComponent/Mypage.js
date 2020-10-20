@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Grid, Segment, List, Header, Table, Icon} from 'semantic-ui-react'
 import HeaderTemplate from "../Template/Header"
+import UploadCounseling from "./UploadCounseling"
 import thumbnail from "../../images/thumbnail.jpeg"
+
 class Mypage extends Component {
 
     state={
@@ -12,6 +14,7 @@ class Mypage extends Component {
             //banerImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQznb5ExwUrelpSWcGeXQtU2Z-sUOcSKzkrog&usqp=CAU",
 
         },
+        isWriting:false
     }
     render(){
         return (
@@ -81,28 +84,38 @@ class Mypage extends Component {
                         </Grid.Row>
                         <Grid.Row style={{border:"solid 1px rgba(34,36,38,.15)", borderRadius:".28571429rem"}}>
                             <Grid>
-                            <Grid.Row style={{display:"flex", marginLeft:"2.5em", marginTop:"1em"}}>
-                                <Header as="h3" content="상담하기" onClick={()=>{console.log("ssss")}}/><Icon name="triangle down"></Icon>
+                            <Grid.Row style={{marginLeft:"2.5em", marginTop:"1em"}}>
+                                <Header as="h3" content="상담하기" onClick={()=>{this.setState({isWriting:!this.state.isWriting})}}/>
+                                    {this.state.isWriting === false ? <Icon name="triangle down" /> : <Icon name="triangle up" />}
+                                
                             </Grid.Row>
+                            <Grid.Row style={{marginLeft:"2.5em"}} rows={10}>
+                                {this.state.isWriting === true ? <></> : <UploadCounseling></UploadCounseling>}
+                            </Grid.Row>
+                            
                                 <Grid.Row>
-                                    <Grid.Column width={10} style={{ marginLeft: "2em" }}>
+                                    <Grid.Column width={13} style={{ marginLeft: "2em" }}>
                                         <Table basic='very'>
                                             <Table.Body>
                                                 <Table.Row>
                                                     <Table.Cell><Header as="h4" content="1" /></Table.Cell>
                                                     <Table.Cell>배가..배가...레이서!</Table.Cell>
+                                                    <Table.Cell>처리중</Table.Cell>
                                                 </Table.Row>
                                                 <Table.Row>
                                                     <Table.Cell><Header as="h4" content="2" /></Table.Cell>
                                                     <Table.Cell>손바닥에 무좀이 생겼어요</Table.Cell>
+                                                    <Table.Cell>완료</Table.Cell>
                                                 </Table.Row>
                                                 <Table.Row>
                                                     <Table.Cell><Header as="h4" content="3" /></Table.Cell>
                                                     <Table.Cell>탈모인가봐요</Table.Cell>
+                                                    <Table.Cell>완료</Table.Cell>
                                                 </Table.Row>
                                                 <Table.Row>
                                                     <Table.Cell><Header as="h4" content="4" /></Table.Cell>
                                                     <Table.Cell>목도붓고 피나는 입몸병엔 이가탄</Table.Cell>
+                                                    <Table.Cell>처리중</Table.Cell>
                                                 </Table.Row>
                                             </Table.Body>
                                         </Table>
