@@ -85,9 +85,14 @@ class HeaderTemplate extends Component {
                 style={null}> 
                   <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 0 ? true : false} onClick={()=>this.movePage(0)}>Home</Menu.Item>
                 </Link>
-                
+                <Link
+                to="/information"
+                style={null}
+                >
+                  <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 2 ? true : false} onClick={()=>this.movePage(2)}>Information</Menu.Item>
+
+                </Link>
                 <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 1 ? true : false} onClick={()=>this.movePage(1)}>Notification</Menu.Item>
-                <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 2 ? true : false} onClick={()=>this.movePage(2)}>Information</Menu.Item>
                 
                 <Link 
                 to="/reservation" 

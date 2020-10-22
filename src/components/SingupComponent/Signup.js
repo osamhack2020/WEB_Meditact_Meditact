@@ -1,18 +1,22 @@
 import React, {Component} from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
-class Login extends Component{
+class Signup extends Component{
   state = {
     inputEmail : "",
     inputPassword : "",
+    inputName:"",
+    inputAge:"",
+    inputHeight:"",
+    inputWeight:"",
   }
   onTryLogin = () => {
     fetch("https://kshired.com/api/user",{
       method: "POST",
       body: JSON.stringify({
         "user":{
-          "username":"tt",
+          "username":this.state.inputName,
           "email":this.state.inputEmail,
-          "role":"Admin",
+          "role":"User",
           "password":this.state.inputPassword,
         }
       }),
@@ -28,15 +32,18 @@ class Login extends Component{
       })
 
   }
-  handleChange = (e, name)=>{
-    name == "email" ? this.setState({inputEmail:e.target.value}) : this.setState({inputPassword:e.target.value})
+  handleChange = (e, input)=>{
+    const inputVal = "input"+input;
+    this.setState({
+        [inputVal]:e.target.value,
+    })
   }
   render(){
     return(
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> Log-in to your account
+            <Image src='/logo.png' /> 계정을 생성하세요!
           </Header>
           <Form size='large'>
             <Segment stacked>
@@ -46,7 +53,7 @@ class Login extends Component{
                 iconPosition='left' 
                 placeholder='E-mail address' 
                 value={this.state.inputEmail} 
-                onChange={(e) => this.handleChange(e, "email")}
+                onChange={(e) => this.handleChange(e, "Email")}
               />
               <Form.Input
                 fluid
@@ -55,16 +62,39 @@ class Login extends Component{
                 placeholder='Password'
                 type='password'
                 value={this.state.inputPassword}
-                onChange = {(e) => this.handleChange(e, "password")}
+                onChange = {(e) => this.handleChange(e, "Password")}
               />
-
+                <Form.Input
+                fluid
+                placeholder='Your name'
+                value={this.state.inputName}
+                onChange = {(e) => this.handleChange(e, "Name")}
+              />
+                <Form.Input
+                fluid
+                placeholder='Your age'
+                value={this.state.inputAge}
+                onChange = {(e) => this.handleChange(e, "Age")}
+              />
+              <Form.Input
+                fluid
+                placeholder='Your height'
+                value={this.state.inputHeight}
+                onChange = {(e) => this.handleChange(e, "Height")}
+              />
+              <Form.Input
+                fluid
+                placeholder='Your weight'
+                value={this.state.inputWeight}
+                onChange = {(e) => this.handleChange(e, "Weight")}
+              />
               <Button color='teal' fluid size='large' onClick={this.onTryLogin}>
-                Login
+                SignUp
             </Button>
             </Segment>
           </Form>
           <Message>
-            New to us? <a href='#'>Sign Up</a>
+            이미 가입되어 있나요? <a href='#'>Sign In</a>
           </Message>
         </Grid.Column>
       </Grid>
@@ -74,4 +104,4 @@ class Login extends Component{
 
 
 
-export default Login
+export default Signup
