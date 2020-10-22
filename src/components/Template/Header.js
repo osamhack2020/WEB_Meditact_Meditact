@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { createMedia } from '@artsy/fresnel'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import * as Scroll from "react-scroll"
 import {
   Button,
   Container,
@@ -31,7 +32,16 @@ class HeaderTemplate extends Component {
       },
       currentFocusCategory:0,
       fixed:false,
-    }
+      scroll:Scroll.animateScroll,
+    };
+    setInterval(()=>{
+      if(document.scrollingElement.scrollTop <= 200){
+        this.setState({
+          currentFocusCategory:0,
+        })
+      }
+    },500)
+    
   }
   hideFixedMenu = () => this.setState({ fixed: false })
   showFixedMenu = () => this.setState({ fixed: true })
@@ -39,8 +49,9 @@ class HeaderTemplate extends Component {
     this.setState({
       currentFocusCategory:currentPage,
     })
-    if(currentPage === 3){
-
+    if(currentPage === 1){
+      this.state.scroll.scrollTo(200)
+      console.log(111);
     }
   }
   render() {
@@ -48,6 +59,7 @@ class HeaderTemplate extends Component {
     const { fixed } = this.state
     const banerImage = this.props.banerInformation.banerImage;
     console.log(banerImage);
+    
     //페이지 전체 렌더링
     return (
       <Media greaterThan='mobile'>
@@ -75,7 +87,7 @@ class HeaderTemplate extends Component {
                 </Link>
                 
                 <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 1 ? true : false} onClick={()=>this.movePage(1)}>Notification</Menu.Item>
-                <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 2 ? true : false} onClick={()=>this.movePage(2)}>MRI & X-RAY </Menu.Item>
+                <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 2 ? true : false} onClick={()=>this.movePage(2)}>Information</Menu.Item>
                 
                 <Link 
                 to="/reservation" 
