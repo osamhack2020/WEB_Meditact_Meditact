@@ -28,7 +28,7 @@ class Signup extends Component{
       .then(res => console.log(res))
       .then((res)=>{
         console.log(res);
-        // document.location.href = "/"
+        document.location.href = "/"
       })
 
   }

@@ -1,30 +1,41 @@
 import React, {Component} from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
+import {registerSuccess} from "../../actions";
+
 class Login extends Component{
   state = {
     inputEmail : "",
     inputPassword : "",
+    history:null,
+  }
+  componentDidMount(){
+    const { history } = this.props;
+    this.setState({history:history});
   }
   onTryLogin = () => {
-    fetch("https://kshired.com/api/user",{
+    fetch("https://kshired.com/api/users/login",{
       method: "POST",
       body: JSON.stringify({
         "user":{
-          "username":"tt",
           "email":this.state.inputEmail,
-          "role":"Admin",
           "password":this.state.inputPassword,
         }
       }),
       headers: {
         "Content-Type": "application/json",
       },
+      
     })
       .then(res => res.json())
       .then(res => console.log(res))
       .then((res)=>{
-        console.log(res);
-        // document.location.href = "/"
+        this.props.SuccessLogin({
+          "email":this.state.inputEmail,
+          "password":this.state.inputPassword,
+        })
+        this.props.history.push("/")
       })
 
   }
@@ -71,7 +82,14 @@ class Login extends Component{
     )
   }
 }
+const mapDispatchToProps = (dispatch) =>{
+  return{
+      SuccessLogin:(userInfo) => dispatch(registerSuccess(userInfo))
+  }
+}
+
+Login = connect(null, mapDispatchToProps)(Login);
 
 
 
-export default Login
+export default withRouter(Login);

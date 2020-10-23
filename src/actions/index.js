@@ -36,9 +36,11 @@ export function register() {
     };
 }
 
-export function registerSuccess() {
+export function registerSuccess(userInfo) {
+    console.log("action")
     return {
         type: AUTH_REGISTER_SUCCESS,
+        userInfo:userInfo
     };
 }
 

@@ -1,4 +1,11 @@
-import {GET_DOCTORINFO, INITIAL_DOCTORINFO, SET_DOCTORCARD_INDEX} from '../actions';
+import {
+    GET_DOCTORINFO, 
+    INITIAL_DOCTORINFO, 
+    SET_DOCTORCARD_INDEX,
+    AUTH_REGISTER_SUCCESS,
+    AUTH_REGISTER,
+
+} from '../actions';
 import {combineReducers} from "redux";
 //name, major, thumbnal, description
 const doctorCardInitialState = {
@@ -12,6 +19,10 @@ const doctorCardInitialState = {
     },
 
 };
+const userIntialState = {
+    user:null,
+    isLogin:false,
+}
 
 const doctor = (state = doctorCardInitialState, action) => {
     console.log(123)
@@ -38,9 +49,21 @@ const doctor = (state = doctorCardInitialState, action) => {
         
     }
 }
-
+const user = (state = userIntialState, action) => {
+    switch(action.type){
+        case AUTH_REGISTER_SUCCESS:
+            console.log("reducer")
+            return Object.assign({}, state, {
+                user:state.userInfo,
+                isLogin:true,
+            })
+        default:
+            return state;
+    }
+}
 const MeditactReducers = combineReducers({
     doctor,
+    user
 });
 
 export default MeditactReducers;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import Notice from "../NoticeComponent/Notice";
 import HeaderTemplate from "../Template/Header"
+import { connect } from 'react-redux';
 
 
 const { MediaContextProvider} = createMedia({
@@ -19,25 +20,45 @@ const state = {
     isMain:true,
   }
 }
-const ResponsiveContainer = ({ children }) => (
-  <MediaContextProvider>
-    <HeaderTemplate
-      banerInformation={state.banerInformation}
-    >
-      {children}
-    </HeaderTemplate>
-  </MediaContextProvider>
-)
-
-ResponsiveContainer.propTypes = {
-  children: PropTypes.node,
+class ResponsiveContainer extends Component{
+  render(){
+    console.log(this.props.isLogin)
+    return(
+      <MediaContextProvider>
+        <HeaderTemplate
+          banerInformation={state.banerInformation}
+          isLogin={this.props.isLogin}
+        >
+          {this.props.children}
+        </HeaderTemplate>
+      </MediaContextProvider>
+  
+    )
+  }
+  
 }
 
-const MainComponent = () => (
-  <ResponsiveContainer>
-    <Notice/>
-    {/* mri & xray component */}
-  </ResponsiveContainer>
-)
+
+
+class MainComponent extends Component  {
+  render(){
+    console.log(this.props.isLogin + "++++++++++++++++++++")
+    return (
+      <ResponsiveContainer isLogin={this.props.isLogin}>
+        <Notice />
+        {/* mri & xray component */}
+      </ResponsiveContainer>
+    )
+  }
+}
+
+let mapStateToProps = (state) => {
+  return {
+      isLogin: state.user.isLogin
+  };
+}
+
+MainComponent = connect(mapStateToProps)(MainComponent);
+
 
 export default MainComponent
