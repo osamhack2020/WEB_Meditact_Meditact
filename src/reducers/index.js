@@ -64,11 +64,12 @@ const doctor = (state = doctorCardInitialState, action) => {
     }
 }
 const user = (state = userIntialState, action) => {
+    console.log(action, state);
     switch(action.type){
         case AUTH_REGISTER_SUCCESS:
             console.log("reducer")
             return Object.assign({}, state, {
-                user:state.userInfo,
+                user:action.userInfo,
                 isLogin:true,
             })
         default:

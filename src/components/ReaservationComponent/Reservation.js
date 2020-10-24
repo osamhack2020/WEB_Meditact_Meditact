@@ -5,9 +5,10 @@ import { connect } from 'react-redux';
 import {withRouter} from "react-router-dom";
 
 import {initialDoctorInfo} from "../../actions";
+
 import CardList from "./CardList";
 import CurrentReservation from "./CurrentReservation"
-
+import ReservationManage from "./ReservationManage"
 
 class ReservationComponent extends Component{
     constructor(props){
@@ -61,43 +62,48 @@ class ReservationComponent extends Component{
                 isLogin={this.state.isLogin}
             >
                 <Segment>
-                    <Grid container stackable style={{paddingTop:"2em"}}>
-                        <Grid.Row>
-                            <Grid.Column width={20}>
-                                <Header 
-                                    style={{paddingBottom:'1.5em'}}
-                                    as='h2'
-                                    content='예약하기'
-                                />
-                            </Grid.Column>
-                        </Grid.Row>
-                        <Grid.Row style={{paddingLeft:"1.5em"}}>
-                            <Dropdown clearable options={this.state.majorList} selection></Dropdown>
-                        </Grid.Row>
-                        <Grid.Row>
-                            <Grid.Column width={5}>
-                                <CardList/>
-                            </Grid.Column>
-                            <Grid.Column width={10}>
-                                {
-                                    this.state.selectedDoctor === null ?
-                                        <Segment width={10} style={{ paddingTop: "25em", paddingLeft: "17em", minHeight: "52.3em" }}>
-                                            <div style={{ display: "flex" }}>
-                                                <Icon name="plus circle" color="grey" size="big" style={{ paddingTop: "1em" }} />
-                                                <Header
-                                                    as="h1"
-                                                    color="grey"
-                                                >
-                                                    CLICK CARD
+                    {this.props.userInfo.role === "user" ?
+                        <Grid container stackable style={{ paddingTop: "2em" }}>
+                            <Grid.Row>
+                                <Grid.Column width={20}>
+                                    <Header
+                                        style={{ paddingBottom: '1.5em' }}
+                                        as='h2'
+                                        content='예약하기'
+                                    />
+                                </Grid.Column>
+                            </Grid.Row>
+                            <Grid.Row style={{ paddingLeft: "1.5em" }}>
+                                <Dropdown clearable options={this.state.majorList} selection></Dropdown>
+                            </Grid.Row>
+                            <Grid.Row>
+                                <Grid.Column width={5}>
+                                    <CardList />
+                                </Grid.Column>
+                                <Grid.Column width={10}>
+                                    {
+                                        this.state.selectedDoctor === null ?
+                                            <Segment width={10} style={{ paddingTop: "25em", paddingLeft: "17em", minHeight: "52.3em" }}>
+                                                <div style={{ display: "flex" }}>
+                                                    <Icon name="plus circle" color="grey" size="big" style={{ paddingTop: "1em" }} />
+                                                    <Header
+                                                        as="h1"
+                                                        color="grey"
+                                                    >
+                                                        CLICK CARD
                                         </Header>
-                                            </div>
-                                        </Segment> :
-                                        <CurrentReservation selectedDoctor={this.state.selectedDoctor}/>
+                                                </div>
+                                            </Segment> :
+                                            <CurrentReservation selectedDoctor={this.state.selectedDoctor} />
 
-                                }                                
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                                    }
+                                </Grid.Column>
+                            </Grid.Row>
+                        </Grid>
+                        :
+                        <ReservationManage></ReservationManage>
+                    }
+                    
                 </Segment>
             </HeaderTemplate>
         )
@@ -112,7 +118,8 @@ const mapDispatchToProps = (dispatch) =>{
 const mapStateToProps = (state) => {
     return {
         selectedDoctorIndex: state.doctor.selectedDoctorIndex,
-        isLogin: state.user.isLogin
+        isLogin: state.user.isLogin,
+        userInfo:state.user.user,
     };
 }
 

@@ -19,6 +19,9 @@ class Mypage extends Component {
         },
         isWriting:false
     }
+    onClickCounselingContent = ()=>{
+        
+    }
     render(){
         return (
             <HeaderTemplate banerInformation={this.state.banerInformation}>
@@ -104,7 +107,7 @@ class Mypage extends Component {
                                     <Grid.Column width={13} style={{ marginLeft: "2em" }}>
                                         <Table basic='very'>
                                             <Table.Body>
-                                                <Table.Row>
+                                                <Table.Row onClick={()=>{}}>
                                                     <Table.Cell><Header as="h4" content="1" /></Table.Cell>
                                                     <Table.Cell>배가..배가...레이서!</Table.Cell>
                                                     <Table.Cell>처리중</Table.Cell>

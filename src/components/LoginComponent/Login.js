@@ -21,6 +21,7 @@ class Login extends Component{
         "user":{
           "email":this.state.inputEmail,
           "password":this.state.inputPassword,
+          
         }
       }),
       headers: {
@@ -29,11 +30,12 @@ class Login extends Component{
       
     })
       .then(res => res.json())
-      .then(res => console.log(res))
       .then((res)=>{
         this.props.SuccessLogin({
           "email":this.state.inputEmail,
           "password":this.state.inputPassword,
+          "role": res.user.role,
+          "token":res.user.token,
         })
         this.props.history.push("/")
       })
