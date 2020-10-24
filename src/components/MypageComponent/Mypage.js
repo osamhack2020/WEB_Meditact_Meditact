@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Grid, Segment, List, Header, Table, Icon} from 'semantic-ui-react'
+import { connect } from 'react-redux';
+
 import HeaderTemplate from "../Template/Header"
 import UploadCounseling from "./UploadCounseling"
+import DoctorList from "./DoctorList";
 import thumbnail from "../../images/thumbnail.jpeg"
 
 class Mypage extends Component {
@@ -87,8 +90,12 @@ class Mypage extends Component {
                             <Grid.Row style={{marginLeft:"2.5em", marginTop:"1em"}}>
                                 <Header as="h3" content="상담하기" onClick={()=>{this.setState({isWriting:!this.state.isWriting})}}/>
                                     {this.state.isWriting === false ? <Icon name="triangle down" /> : <Icon name="triangle up" />}
-                                
                             </Grid.Row>
+                            <Segment style={{marginLeft:"2.5em"}}>
+                                <Header as="h4" content={"담당 군의관 : " + this.props.selectDoctorName} color="grey"/>
+
+                                <DoctorList></DoctorList>
+                            </Segment>
                             <Grid.Row style={{marginLeft:"2.5em"}} rows={10}>
                                 {this.state.isWriting === true ? <></> : <UploadCounseling></UploadCounseling>}
                             </Grid.Row>
@@ -132,5 +139,11 @@ class Mypage extends Component {
     }
 }
 
+let mapStateToProps = (state) => {
+    return {
+        selectDoctorName: state.doctor.selectDoctorName
+    };
+}
+Mypage = connect(mapStateToProps)(Mypage);
 
 export default Mypage;

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import { createMedia } from '@artsy/fresnel'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import * as Scroll from "react-scroll"
 import {
   Button,
@@ -103,15 +105,19 @@ class HeaderTemplate extends Component {
                 </Link>
                 <Menu.Item position='right'>
                   
-                    <Link to="/login" style={null}>
+                    <Link to={this.props.isLogin ? "/mypage" : "/login"} style={null}>
                         <Button as='a' inverted={!fixed}>
                             {this.props.isLogin ? "MyPage" : "Login"}
                         </Button>
                     </Link>
-                  
+                  {this.props.isLogin ? 
+                  <></> 
+                  : 
                   <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
                     Sign Up
                   </Button>
+                  }
+
                 </Menu.Item>
               </Container>
             </Menu>
@@ -162,6 +168,13 @@ HeaderTemplate.propTypes = {
   children: PropTypes.node,
 }
 
-  
+const mapStateToProps = (state) => {
+  return {
+      selectedDoctorIndex: state.doctor.selectedDoctorIndex,
+      isLogin: state.user.isLogin
+  };
+}
+HeaderTemplate = connect(mapStateToProps)(HeaderTemplate);
+
   
 export default HeaderTemplate;

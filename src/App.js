@@ -19,14 +19,15 @@ import
 
 
 class App extends Component{
+
   render(){
     return (
       <div>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/reservation:id" component={ReservationPage} />
+        <Route exact path="/reservation" component={ReservationPage}/>
         <Route exact path="/chatbot" component={ChatBotPage} />
-        <Route exact path="/mypage:id" component={MypagePage} />
+        <Route exact path="/mypage" component={MypagePage} />
         <Route exact path="/signup" component={SignupPage} />
         <Route exact path="/information" component={InformationPage} />
       </div>

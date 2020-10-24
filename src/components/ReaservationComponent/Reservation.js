@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import HeaderTemplate from "../Template/Header"
 import { Grid, Segment,  Header, Dropdown, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
+
 import {initialDoctorInfo} from "../../actions";
 import CardList from "./CardList";
 import CurrentReservation from "./CurrentReservation"
@@ -9,8 +11,10 @@ import CurrentReservation from "./CurrentReservation"
 
 class ReservationComponent extends Component{
     constructor(props){
-        super(props)
+        super(props);
+        
         this.state={
+            isLogin:false,
             banerInformation:{
                 title:"예약확인하기",
                 subTitle:null,
@@ -37,6 +41,14 @@ class ReservationComponent extends Component{
         };
         this.props.initialDoctorsInfo(this.state.doctorsInfo);
     }
+    NoLogin(){
+        alert("login!!");
+        this.props.history.push("/login");
+    }
+    componentDidMount(){
+        this.props.isLogin ? this.setState({isLogin:true}) : this.NoLogin();
+        console.log(this.props.isLogin)
+    }
     componentWillReceiveProps(nextProps){
         this.setState({
             selectedDoctor:this.state.doctorsInfo[nextProps.selectedDoctorIndex-1],
@@ -46,6 +58,7 @@ class ReservationComponent extends Component{
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}
+                isLogin={this.state.isLogin}
             >
                 <Segment>
                     <Grid container stackable style={{paddingTop:"2em"}}>
@@ -98,10 +111,11 @@ const mapDispatchToProps = (dispatch) =>{
 }
 const mapStateToProps = (state) => {
     return {
-        selectedDoctorIndex: state.doctor.selectedDoctorIndex
+        selectedDoctorIndex: state.doctor.selectedDoctorIndex,
+        isLogin: state.user.isLogin
     };
 }
 
 ReservationComponent = connect(mapStateToProps, mapDispatchToProps)(ReservationComponent);
 
-export default ReservationComponent
+export default withRouter(ReservationComponent)
