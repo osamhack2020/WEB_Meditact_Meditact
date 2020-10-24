@@ -31,6 +31,7 @@ class Login extends Component{
     })
       .then(res => res.json())
       .then((res)=>{
+        console.log(res.user)
         this.props.SuccessLogin({
           "email":this.state.inputEmail,
           "password":this.state.inputPassword,
@@ -77,7 +78,7 @@ class Login extends Component{
             </Segment>
           </Form>
           <Message>
-            New to us? <a href='#'>Sign Up</a>
+            New to us? <a href='/signup'>Sign Up</a>
           </Message>
         </Grid.Column>
       </Grid>

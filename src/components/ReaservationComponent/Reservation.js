@@ -44,7 +44,7 @@ class ReservationComponent extends Component{
     }
     NoLogin(){
         alert("login!!");
-        this.props.history.push("/login");
+        //this.props.history.push("/login");
     }
     componentDidMount(){
         this.props.isLogin ? this.setState({isLogin:true}) : this.NoLogin();
@@ -56,13 +56,14 @@ class ReservationComponent extends Component{
         })
     }
     render(){
+        const roll = "Admin"
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}
                 isLogin={this.state.isLogin}
             >
                 <Segment>
-                    {this.props.userInfo.role === "user" ?
+                    {/*this.props.userInfo.role*/roll === "User" ?
                         <Grid container stackable style={{ paddingTop: "2em" }}>
                             <Grid.Row>
                                 <Grid.Column width={20}>
