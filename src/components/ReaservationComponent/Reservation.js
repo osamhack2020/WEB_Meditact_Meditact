@@ -56,14 +56,13 @@ class ReservationComponent extends Component{
         })
     }
     render(){
-        const roll = "User"
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}
                 isLogin={this.state.isLogin}
             >
                 <Segment>
-                    {/*this.props.userInfo.role*/roll === "User" ?
+                    {this.props.userInfo.role === "User" ?
                         <Grid container stackable style={{ paddingTop: "2em" }}>
                             <Grid.Row>
                                 <Grid.Column width={20}>

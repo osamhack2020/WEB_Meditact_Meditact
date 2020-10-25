@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Grid, Segment, Image, Header, List, Button,Icon, Modal } from 'semantic-ui-react'
+import { Grid, Segment, Image, Header, List, Button,Icon, Modal, TextArea, Form} from 'semantic-ui-react'
 
 class CurrentReservation extends Component{
     state ={
@@ -9,6 +9,8 @@ class CurrentReservation extends Component{
         timeListSrc:null,
         isOpen:false,
         reservationTime:["10 ~ 11", "13 ~ 14", "14 ~ 15", "15 ~ 16", "16 ~ 17", "17 ~ 18"],
+        reservationInfo:{},
+        description:"",
     }
     makeList = ()=>{
         const careers = this.props.selectedDoctor.career.map(
@@ -32,14 +34,24 @@ class CurrentReservation extends Component{
         })
     }
 
-    clickReservationBtn = (btnObj)=>{
-        this.setState({isOpen:false});
-        console.log(btnObj)
+    clickReservationBtn = (time)=>{
+        
+        this.setState({
+            reservationInfo:{
+                name:"user.name",
+                doctorName:this.props.selectedDoctor.name,
+                time:time,
+                description:""
+            },
+            isOpen:true,
+        })
     }
     componentDidMount(){
         this.makeList()
     }
-
+    handleChange(e){
+        this.setState({description:e.target.value})
+    }
     render(){
         return(
             <Segment>
@@ -99,44 +111,58 @@ class CurrentReservation extends Component{
                                 
                         </Grid.Column>
                     </Grid.Row>
+                    <Grid.Row>
+                        <Form size={"small"} style={{width:"70em"}}>
+                            <TextArea 
+                                placeholder='증상을 작성하세요.' 
+                                value={this.state.description} 
+                                onChange={(e) => this.handleChange(e, "Email")} />
+                            <Header
+                                style={{ paddingLeft: "0.6em" }}
+                                as='h4'
+                                color='black'
+                                content="증상을 입력한 뒤 원하는 시간이 적힌 버튼을 클릭하세요"
+                            />
+                        </Form>
+                    </Grid.Row>
+
                     <Grid.Row verticalAlign={"middle"}>
                         <Grid columns={2} padded width={2}>
+
                             {this.state.reservationTime.map((time) => (
                                 <Grid.Column key={time}>
-                                    <Modal
-                                        closeIcon
-                                        open={this.state.isOpen}
-                                        trigger={
-                                            <div style={{display:"flex"}}>
-                                                <Button  content={time}>{time}</Button>
-                                                <Header style={{paddingLeft:"0.6em"}} as='h4' color='grey'content={"0/4"}/>
-                                            </div>
-                                        }
-                                        onClose={() => this.setState({isOpen:false})}
-                                        onOpen={() => this.setState({isOpen:true})}
-                                    >
-                                        <Header icon='archive' content='마지막으로 확인해주세요!' />
-                                        <Modal.Content>
-                                            <p>
-                                                예약시간 : {time} / 담당 군의관 : {"찬호김"}<br />
-                                                맞으면 Yes 틀리면 No를 클릭해주세요.
-                                            </p>
-                                        </Modal.Content>
-                                        <Modal.Actions>
-                                            <Button color='red' onClick={()=>this.setState({isOpen:false})}>
-                                                <Icon name='remove' /> No
-                                            </Button>
-                                            <Button color='green' onClick={()=>this.clickReservationBtn(this)}>
-                                                <Icon name='checkmark' /> Yes
-                                            </Button>
-                                        </Modal.Actions>
-                                    </Modal>
-                                    
+                                    <div style={{ display: "flex" }}>
+                                        <Button content={time} onClick={()=>this.clickReservationBtn(time)}>{time}</Button>
+                                        <Header style={{ paddingLeft: "0.6em" }} as='h4' color='grey' content={"0/4"} />
+                                    </div>
                                 </Grid.Column>
                             ))}
                         </Grid>
                     </Grid.Row>
                 </Grid>
+                <Modal
+                    closeIcon
+                    open={this.state.isOpen}
+                    onClose={() => this.setState({ isOpen: false })}
+                    onOpen={() => this.setState({ isOpen: true })}
+                >
+                    <Header icon='archive' content='마지막으로 확인해주세요!' />
+                    <Modal.Content>
+                        <p>
+                            예약시간 : {this.state.reservationInfo.time} / 담당 군의관 : {this.state.reservationInfo.doctorName}<br />
+                            증상 : {this.state.description}<br />
+                            맞으면 Yes 틀리면 No를 클릭해주세요.
+                        </p>
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button color='red' onClick={() => this.setState({ isOpen: false })}>
+                            <Icon name='remove' /> No
+                        </Button>
+                        <Button color='green' onClick={() => this.setState({ isOpen: false })}>
+                            <Icon name='checkmark' /> Yes
+                        </Button>
+                    </Modal.Actions>
+                </Modal>
             </Segment>
         )
     }
