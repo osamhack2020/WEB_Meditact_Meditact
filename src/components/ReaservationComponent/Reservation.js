@@ -56,7 +56,7 @@ class ReservationComponent extends Component{
         })
     }
     render(){
-        const roll = "Admin"
+        const roll = "User"
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}

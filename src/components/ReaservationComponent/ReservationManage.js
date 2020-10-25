@@ -7,7 +7,7 @@ import {
     Icon, 
     List,
     Button,
-    
+    Modal
  } from 'semantic-ui-react'
 import { connect } from 'react-redux';
 
