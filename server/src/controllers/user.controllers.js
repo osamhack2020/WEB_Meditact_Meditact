@@ -135,6 +135,10 @@ const createUser = (req, res, next) => {
   user.email = req.body.user.email;
   user.setPassword(req.body.user.password);
   user.role = req.body.user.role;
+  user.age = req.body.user.age;
+  user.height = req.body.user.height || '0';
+  user.weight = req.body.user.weight || '0';
+  user.phoneNumber = req.body.user.phoneNumber || '000-0000-0000';
 
   user
     .save()

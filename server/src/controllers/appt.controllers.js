@@ -29,12 +29,20 @@ const createAppt = (req, res, next) => {
 };
 
 const getAll = (req, res, next) => {
-  if (req.payload.role !== Role.Admin || req.payload.role !== Role.Medic) {
+  if (req.payload.role !== Role.Admin && req.payload.role !== Role.Medic) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
+
+  Appt.find().then((appts) => {
+    return res.json(appts);
+  });
 };
 
 const confirmAppt = (req, res, next) => {
+  if (req.payload.role !== Role.Admin && req.payload.role !== Role.Medic) {
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+
   if (!req.body.id) {
     return res.status(422).json({ errors: { id: "can't be blank" } });
   }
