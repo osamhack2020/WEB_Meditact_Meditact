@@ -79,7 +79,7 @@ $ yarn install ( or npm install )
 $ yarn start ( or npm start )
 ```
 
-기능설계 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
+[기능설계](#기능 설계) 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
 
 ## 팀 정보 (Team Information)
 
