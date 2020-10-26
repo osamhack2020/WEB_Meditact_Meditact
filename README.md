@@ -76,7 +76,7 @@ $ yarn install ( or npm install )
 서버를 실행하기 전 mongod이 실행되고 있는지와 설정해놓은 환경변수의 문제가 없는 지 확인한다.
 
 ```
-$ yarn start
+$ yarn start ( or npm start )
 ```
 
 기능설계 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
