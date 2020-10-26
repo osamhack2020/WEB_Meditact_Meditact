@@ -49,8 +49,6 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
   </tbody>
 </table>
 
-​
-
 ## 설치 안내 (Installation Process)
 
 **환경 변수 설정**
@@ -79,7 +77,7 @@ $ yarn install ( or npm install )
 $ yarn start ( or npm start )
 ```
 
-[기능설계](#기능 설계) 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
+[기능설계](#기능-설계) 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
 
 ## 팀 정보 (Team Information)
 
