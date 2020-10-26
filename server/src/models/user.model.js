@@ -73,6 +73,7 @@ userSchema.methods.toJSON = function () {
     username: this.username,
     email: this.email,
     role: this.role || undefined,
+    posts: this.posts,
   };
 };
 

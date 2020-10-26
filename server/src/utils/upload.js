@@ -5,7 +5,7 @@ const maxSize = 1024 * 1024 * 5;
 // file storage setting
 let storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/images/');
+    cb(null, 'public/files');
   },
   filename: (req, file, cb) => {
     console.log(file.originalname);
