@@ -63,16 +63,23 @@ SECRET_KEY =
 DB_URL =
 ```
 
-**서버 실행**
-
-서버 실행 전 mongod이 실행되어 있는 지 확인 한다.
+**서버 의존성 설치**
 
 ```
-$ yarn install ( or npm install ) # 처음에만 진행.
-$ yarn start ( or npm start )
+$ yarn install ( or npm install )
 ```
 
 ## 프로젝트 사용법 (Getting Started)
+
+**서버 실행**
+
+서버를 실행하기 전 mongod이 실행되고 있는지와 설정해놓은 환경변수의 문제가 없는 지 확인한다.
+
+```
+$ yarn start
+```
+
+기능설계 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
 
 ## 팀 정보 (Team Information)
 
