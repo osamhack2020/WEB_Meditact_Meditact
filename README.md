@@ -14,7 +14,7 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
 
 ## 기능 설계
 
-## Web Front-end
+### Web Front-end
 
 #### 디자인 구성
 
@@ -52,7 +52,7 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
   1. "병원정보"는 국군수도병원의 정보를 바탕으로 하였습니다. 저희 페이지에서 출력 가능한 부분은 직접 구현하였고, 그렇지 못한 페이지는 국군수도병원 페이지로 리디렉션이 되도록 구현하였습니다.
   2. 네비게이션을 구현하여 원하는 정보(병원 가는 길, 시설안내 등)를 클릭하면 그에 맞는 정보가 페이지에서 출력됩니다.
 
-## 각 페이지별 구성 기능
+### 각 페이지별 구성 기능
 
 _※페이지의 배너 이미지는 수정 예정입니다._
 
@@ -60,7 +60,7 @@ _※페이지의 배너 이미지는 수정 예정입니다._
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/main.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="/src/forReadme/main.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 헤더 출력기능 </td>
         </tr>
         <tr>
@@ -101,7 +101,7 @@ _※페이지의 배너 이미지는 수정 예정입니다._
     </tbody>
 </table>
 
-## Web Back-end
+### Web Back-end
 
 3가지 주요 기능별로 API의 End Point를 구별하였습니다.
 
