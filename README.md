@@ -8,9 +8,15 @@
 
 **_Meditact_** 는 Medicine와 Untact를 합친 합성어로, 국군 의료 서비스의 편리함을 향상시키기 위해 탄생한 프로젝트입니다. 사용자들은 기존의 안내가 부족하던 병원 홈페이지에서 벗어나, 본인에게 필요한 서비스를 주도적으로 찾아 이용할 수 있습니다.
 
-저희 Meditact는 기본적인 병원 홈페이지의 기능과 더불어, **딥러닝**을 기반으로 환자가 가지고 있는 증상을 분석하여 어느 진료과로 가야 적절한 치료를 받을 수 있는지 판단해주는 플랫폼을 개발했습니다. 또한 트리형 구조를 가진 챗봇은 **직관적인 UI**로 사용자가 원하는 정보를 빠르게 얻을 수 있도록 도와줍니다.
+#### 1. 사용자 중심형 AI 챗봇 서비스
+- 한눈에 이해하기 어려운 기존의 병원 홈페이지에서 벗어나, 환자 본인에게 필요한 서비스와 정보를 주도적으로 찾아 이용할 수 있는 환경을 제공합니다.
+- 트리형 구조를 가진 챗봇은 직관적인 UI로 사용자가 원하는 정보를 빠르게 얻을 수 있도록 도와줍니다
 
-Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 의료 서비스의 만족도 향상에 크게 기여할 것입니다.
+#### 2. 딥러닝 기반 진료과 추천 시스템
+- 딥러닝을 이용한 자연어처리 기술을 바탕으로 환자가 호소하는 증상을 분석하여 어느 진료과로 가야 최상의 치료를 받을 수 있는지 판단할 수 있도록 도와줍니다.
+
+#### 3. 비대면 의료 상담 서비스
+-  GOP/GP 근무와 같은 지리적 한계와 COVID-19와 같은 시대적 상황을 극복하고, 군장병의 건강을 보장하기 위한 기본적인 건강 상담 서비스를 제공합니다.
 
 ## 기능 설계
 
@@ -224,10 +230,18 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
             <div align="center"><a href="https://cloud.google.com/gcp" target="_blank"> <img src="https://cloud.google.com/images/social-icon-google-cloud-1200-630.png" alt="gcp"  height="40"/> 
             </a><br>Google Cloud Platform</br></div>
         </td>
-​</tbody>
+ </tbody>
 </table>
 
 ## 설치 안내 (Installation Process)
+
+### 공통 사항
+
+**git clone**
+
+```
+$ git clone https://github.com/osamhack2020/WEB_Meditact_Meditact
+```
 
 ### Web Front-end
 
@@ -241,12 +255,12 @@ $ yarn install ( or npm install )
 
 **환경 변수 설정**
 
-.env 파일을 만들어서 다음과 같은 세 환경 변수를 지정.
+server 디렉토리 최상단에 .env 파일을 만들어서 다음과 같은 세 환경 변수를 지정.
 
 ```
-PORT =
-SECRET_KEY =
-DB_URL =
+PORT
+SECRET_KEY
+DB_URL
 ```
 
 **필수 의존성 설치**
@@ -281,7 +295,7 @@ $ yarn start ( or npm start )
 
 ## 팀 정보 (Team Information)
 
-- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com)
+- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com) 
 
 - [강재현 상병](https://github.com/ashhyun) E-mail : [youkind98@gmail.com](mailto:youkind98@gmail.com)
 
@@ -293,4 +307,4 @@ $ yarn start ( or npm start )
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
-- [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
+- [MIT](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/LICENSE.md)
