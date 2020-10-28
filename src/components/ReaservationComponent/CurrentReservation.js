@@ -8,7 +8,7 @@ class CurrentReservation extends Component{
         paperListSrc:null,
         timeListSrc:null,
         isOpen:false,
-        reservationTime:["10 ~ 11", "13 ~ 14", "14 ~ 15", "15 ~ 16", "16 ~ 17", "17 ~ 18"],
+        reservationTime:["09:00 ~ 10:00", "10:00 ~ 11:00", "11:00 ~ 12:00", "13:00 ~ 14:00", "14:00 ~ 15:00", "15:00 ~ 16:00"],
         reservationInfo:{},
         description:"",
     }
@@ -158,7 +158,8 @@ class CurrentReservation extends Component{
                         <Button color='red' onClick={() => this.setState({ isOpen: false })}>
                             <Icon name='remove' /> No
                         </Button>
-                        <Button color='green' onClick={() => this.setState({ isOpen: false })}>
+                        <Button color='green' onClick={() => {this.setState({ isOpen: false });alert("에약을 등록했습니다.")
+}}>
                             <Icon name='checkmark' /> Yes
                         </Button>
                     </Modal.Actions>
