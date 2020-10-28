@@ -1,2 +1,0 @@
-# MeditactServer
-OSAM Hackerthon backend

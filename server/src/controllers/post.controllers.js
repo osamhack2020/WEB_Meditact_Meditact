@@ -71,23 +71,22 @@ const updatePost = (req, res, next) => {
   if (req.body.category !== undefined) {
     data.category = req.body.category;
   }
-
-  Post.findOneAndUpdate({
-    query: { _id: req.body.id },
-    update: {
-      $set: data,
+  Post.findByIdAndUpdate(
+    {
+      _id: req.body.id,
     },
-    new: true,
-  })
-    .then((post) => {
-      if (!post) {
-        return res.json({ post: 'not found!' });
+    data,
+    { new: true },
+    (err, result) => {
+      if (err) {
+        return res.send(err);
       }
-      return res.send(post.toJSON());
-    })
-    .catch((err) => {
-      return res.send(err);
-    });
+      if (!result) {
+        return res.send({ erros: 'cannot find post' });
+      }
+      return res.send(result);
+    }
+  );
 };
 
 const deletePost = async (req, res, next) => {

@@ -85,31 +85,31 @@ const updateUser = (req, res, next) => {
     data.password = req.body.user.password;
     data.lastPassword = req.body.user.lastPassword;
   }
-  User.findOneAndUpdate({
-    query: { _id: req.payload.id },
-    update: {
-      $set: data,
+
+  User.findByIdAndUpdate(
+    {
+      _id: req.payload.id,
     },
-    new: true,
-  })
-    .then((user) => {
-      if (!user) {
-        return res.json({ user: 'not found!' });
-      }
-      if (data.password) {
-        if (user.validPassword(data.lastPassword)) {
-          user.setPassword(data.password);
-          user.save();
-          console.log(user);
-        } else {
-          return res.status(401).json({ error: { lastPassword: 'unmatched' } });
+    data,
+    { new: true },
+    (err, result) => {
+      if (err) {
+        return res.send(err);
+      } else {
+        if (data.password) {
+          if (result.validPassword(data.lastPassword)) {
+            result.setPassword(data.password);
+          } else {
+            return res
+              .status(401)
+              .json({ error: { lastPassword: 'unmatched' } });
+          }
         }
+        result.save();
+        return res.send(result);
       }
-      return res.send({ user: user.toJSON() });
-    })
-    .catch((err) => {
-      return res.send(err);
-    });
+    }
+  );
 };
 
 const createUser = (req, res, next) => {
@@ -135,13 +135,19 @@ const createUser = (req, res, next) => {
   user.email = req.body.user.email;
   user.setPassword(req.body.user.password);
   user.role = req.body.user.role;
+  user.age = req.body.user.age;
+  user.height = req.body.user.height || '0';
+  user.weight = req.body.user.weight || '0';
+  user.phoneNumber = req.body.user.phoneNumber || '000-0000-0000';
 
   user
     .save()
-    .then(() => {
+    .then((res) => {
       return res.json({ user: user.toJSON() });
     })
-    .catch(next);
+    .catch((err) => {
+      return res.json(err);
+    });
 };
 
 const login = (req, res, next) => {

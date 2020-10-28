@@ -24,6 +24,10 @@ const userSchema = new Schema(
       match: [/\S+@\S+\.\S+/, 'is invalid'],
       index: true,
     },
+    age: String,
+    height: String,
+    weight: String,
+    phoneNumber: String,
     hash: String,
     salt: String,
     role: String,
@@ -73,6 +77,11 @@ userSchema.methods.toJSON = function () {
     username: this.username,
     email: this.email,
     role: this.role || undefined,
+    posts: this.posts,
+    height: this.height,
+    weight: this.weight,
+    age: this.age,
+    phoneNumber: this.phoneNumber,
   };
 };
 
