@@ -103,10 +103,13 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
 	<tbody>
 		<tr>
             <td rowspan="6"><div align="center"><img src="/src/demo.gif" width="40%" height="40%"></a></div></td>
-            <td width="33%"> 군의관 정보 출력</td>
+            <td width="33%">NLP를 이용 한 진료과 분류</td>
         </tr>
         <tr>
-            <td>NLP를 이용 한 진료과 분류</td>
+            <td>병원 예약 기능</td>
+        </tr>
+        <tr>
+            <td>상담 연결 및 군 병원 정보를 출력</td>
         </tr>
     </tbody>
 </table>
