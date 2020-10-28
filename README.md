@@ -224,10 +224,18 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
             <div align="center"><a href="https://cloud.google.com/gcp" target="_blank"> <img src="https://cloud.google.com/images/social-icon-google-cloud-1200-630.png" alt="gcp"  height="40"/> 
             </a><br>Google Cloud Platform</br></div>
         </td>
-​</tbody>
+ </tbody>
 </table>
 
 ## 설치 안내 (Installation Process)
+
+### 공통 사항
+
+**git clone**
+
+```
+$ git clone https://github.com/osamhack2020/WEB_Meditact_Meditact
+```
 
 ### Web Front-end
 
@@ -241,12 +249,12 @@ $ yarn install ( or npm install )
 
 **환경 변수 설정**
 
-.env 파일을 만들어서 다음과 같은 세 환경 변수를 지정.
+server 디렉토리 최상단에 .env 파일을 만들어서 다음과 같은 세 환경 변수를 지정.
 
 ```
-PORT =
-SECRET_KEY =
-DB_URL =
+PORT
+SECRET_KEY
+DB_URL
 ```
 
 **필수 의존성 설치**
@@ -281,7 +289,7 @@ $ yarn start ( or npm start )
 
 ## 팀 정보 (Team Information)
 
-- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com)
+- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com) 
 
 - [강재현 상병](https://github.com/ashhyun) E-mail : [youkind98@gmail.com](mailto:youkind98@gmail.com)
 
