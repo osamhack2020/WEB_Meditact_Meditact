@@ -102,7 +102,7 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
 <table>
 	<tbody>
 		<tr>
-            <td rowspan="6"><div align="center"><img src="/demo.gif" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="/src/demo.gif" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 정보 출력</td>
         </tr>
         <tr>
