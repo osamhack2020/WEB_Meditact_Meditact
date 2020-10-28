@@ -147,14 +147,14 @@ Response :
 
    ```json
    {
-     fieldname: 'file',
-     originalname: 'testfile.png',
-     encoding: '7bit',
-     mimetype: 'application/octet-stream',
-     destination: 'public/files',
-     filename: 'file-1602935217208-testfile.png',
-     path: 'public/files/file-1602935217208-testfile.png',
-     size: 1988
+     "fieldname": "file",
+     "originalname": "testfile.png",
+     "encoding": "7bit",
+     "mimetype": "application/octet-stream",
+     "destination": "public/files",
+     "filename": "file-1602935217208-testfile.png",
+     "path": "public/files/file-1602935217208-testfile.png",
+     "size": 1988
    }
    ```
 
