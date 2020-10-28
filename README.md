@@ -301,4 +301,4 @@ $ yarn start ( or npm start )
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
-- [MIT](https://github.com/osam2020-WEB/Sample-ProjectName-TeamName/blob/master/license.md)
+- [MIT](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/LICENSE.md)
