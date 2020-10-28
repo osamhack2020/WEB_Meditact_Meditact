@@ -100,7 +100,7 @@ class HeaderTemplate extends Component {
                 to="/reservation" 
                 style={null}> 
                   <Menu.Item as='a' style={{fontSize:"1.3em"}} active={this.state.currentFocusCategory === 3 ? true : false} onClick={()=>this.movePage(3)}>
-                  Reaservation
+                  Reservation
                   </Menu.Item>
                 </Link>
                 <Menu.Item position='right'>
@@ -113,9 +113,12 @@ class HeaderTemplate extends Component {
                   {this.props.isLogin ? 
                   <></> 
                   : 
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
+                    <Link to="/signup" style={null}>
+                      <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                        Sign Up
+                      </Button>
+                    </Link>
+
                   }
 
                 </Menu.Item>

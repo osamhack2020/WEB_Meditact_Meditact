@@ -11,11 +11,6 @@ class DoctorCard extends Component{
         return(
             <Card>
                 <Card.Content>
-                    <Image
-                        floated='right'
-                        size='mini'
-                        src='/images/avatar/large/steve.jpg'
-                    />
                     <Card.Header>{name}</Card.Header>
                     <Card.Meta>{major}</Card.Meta>
                     <Card.Description>
