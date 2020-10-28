@@ -58,7 +58,7 @@
    Header : 일반 User의 token 필요.
    
    ````
-Authorization : Bearer <token>
+   Authorization : Bearer <token>
    ````
 
    Response : 
@@ -86,7 +86,7 @@ Authorization : Bearer <token>
    Request Body : 
 
    ```javascript
-{
+   {
    	"id":"5f96ad564cbd5937af9fec5b"
    }
    ```
