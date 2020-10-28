@@ -6,7 +6,7 @@
 
 ---
 
-**_Meditact_**는 Medicine와 Untact를 합친 합성어로, 국군 의료 서비스의 편리함을 향상시키기 위해 탄생한 프로젝트입니다. 사용자들은 기존의 안내가 부족하던 병원 홈페이지에서 벗어나, 본인에게 필요한 서비스를 주도적으로 찾아 이용할 수 있습니다.
+***Meditact***는 Medicine와 Untact를 합친 합성어로, 국군 의료 서비스의 편리함을 향상시키기 위해 탄생한 프로젝트입니다. 사용자들은 기존의 안내가 부족하던 병원 홈페이지에서 벗어나, 본인에게 필요한 서비스를 주도적으로 찾아 이용할 수 있습니다.
 
 저희 Meditact는 기본적인 병원 홈페이지의 기능과 더불어, **딥러닝**을 기반으로 환자가 가지고 있는 증상을 분석하여 어느 진료과로 가야 적절한 치료를 받을 수 있는지 판단해주는 플랫폼을 개발했습니다. 또한 트리형 구조를 가진 챗봇은 **직관적인 UI**로 사용자가 원하는 정보를 빠르게 얻을 수 있도록 도와줍니다.
 
@@ -14,7 +14,7 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
 
 ## 기능 설계
 
-## Web Front-end
+### Web Front-end
 
 #### 디자인 구성
 
@@ -52,7 +52,7 @@ Meditact가 제공하는 **사용자 친화**적인 플랫폼은 전체적인 �
   1. "병원정보"는 국군수도병원의 정보를 바탕으로 하였습니다. 저희 페이지에서 출력 가능한 부분은 직접 구현하였고, 그렇지 못한 페이지는 국군수도병원 페이지로 리디렉션이 되도록 구현하였습니다.
   2. 네비게이션을 구현하여 원하는 정보(병원 가는 길, 시설안내 등)를 클릭하면 그에 맞는 정보가 페이지에서 출력됩니다.
 
-## 각 페이지별 구성 기능
+### 각 페이지별 구성 기능
 
 _※페이지의 배너 이미지는 수정 예정입니다._
 
@@ -60,7 +60,7 @@ _※페이지의 배너 이미지는 수정 예정입니다._
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/main.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="/src/forReadme/main.png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 헤더 출력기능 </td>
         </tr>
         <tr>
@@ -101,7 +101,7 @@ _※페이지의 배너 이미지는 수정 예정입니다._
     </tbody>
 </table>
 
-## Web Back-end
+### Web Back-end
 
 3가지 주요 기능별로 API의 End Point를 구별하였습니다.
 
@@ -110,6 +110,8 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 1. [USER API](./server/APIdocs/UserAPI.md) ( 유저 정보 관련 API )
 2. [POST API](./server/APIdocs/PostAPI.md) ( 상담 글쓰기 관련 API )
 3. [APPT API](./server/APIdocs/ApptAPI.md) ( 예약관련 API )
+
+
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
