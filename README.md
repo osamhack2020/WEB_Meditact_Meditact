@@ -295,15 +295,15 @@ $ yarn start ( or npm start )
 
 ## 팀 정보 (Team Information)
 
-- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com) 
+- [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com), **팀장 및 Web-Backend**
 
-- [강재현 상병](https://github.com/ashhyun) E-mail : [youkind98@gmail.com](mailto:youkind98@gmail.com)
+- [강재현 상병](https://github.com/ashhyun) E-mail : [youkind98@gmail.com](mailto:youkind98@gmail.com), **Deep Learning**
 
-- [이현훈 대위(군의관)](https://github.com/hyeonhoonlee) E-mail : [jackli0373@gmail.com](mailto:jackli0373@gmail.com)
+- [이현훈 대위(군의관)](https://github.com/hyeonhoonlee) E-mail : [jackli0373@gmail.com](mailto:jackli0373@gmail.com), **Deep Learning**
 
-- [김찬호 일병](https://github.com/chanhhoo) E-mail : [hpyho33@naver.com](mailto:hpyho33@naver.com)
+- [김찬호 일병](https://github.com/chanhhoo) E-mail : [hpyho33@naver.com](mailto:hpyho33@naver.com), **Web-Frontend**
 
-- [여종현 상병](https://github.com/mindgitrwx) E-mail : [jonghyeon.rw@gmail.com](mailto:jonghyeon.rw@gmail.com)
+- [여종현 상병](https://github.com/mindgitrwx) E-mail : [jonghyeon.rw@gmail.com](mailto:jonghyeon.rw@gmail.com), **Infra**
 
 ## 저작권 및 사용권 정보 (Copyleft / End User License)
 
