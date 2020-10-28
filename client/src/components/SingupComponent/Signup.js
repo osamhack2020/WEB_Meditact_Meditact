@@ -16,7 +16,7 @@ class Signup extends Component{
         "user":{
           "username":this.state.inputName,
           "email":this.state.inputEmail,
-          "role":"User",
+          "role":"Medic",
           "password":this.state.inputPassword,
         }
       }),

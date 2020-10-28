@@ -9,6 +9,7 @@ import {initialDoctorInfo} from "../../actions";
 import CardList from "./CardList";
 import CurrentReservation from "./CurrentReservation"
 import ReservationManage from "./ReservationManage"
+import DoctorPage from "./DoctorPage"
 
 class ReservationComponent extends Component{
     constructor(props){
@@ -44,7 +45,7 @@ class ReservationComponent extends Component{
     }
     NoLogin(){
         alert("login!!");
-        //this.props.history.push("/login");
+        this.props.history.push("/login");
     }
     componentDidMount(){
         this.props.isLogin ? this.setState({isLogin:true}) : this.NoLogin();
@@ -56,13 +57,15 @@ class ReservationComponent extends Component{
         })
     }
     render(){
+        const role = this.props.userInfo.role;
+        console.log(role)
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}
                 isLogin={this.state.isLogin}
             >
                 <Segment>
-                    {this.props.userInfo.role === "User" ?
+                    {/*this.props.userInfo.role*/role === "User" ?
                         <Grid container stackable style={{ paddingTop: "2em" }}>
                             <Grid.Row>
                                 <Grid.Column width={20}>
@@ -91,9 +94,11 @@ class ReservationComponent extends Component{
                                                         color="grey"
                                                     >
                                                         CLICK CARD
-                                        </Header>
+                                                    </Header>
                                                 </div>
-                                            </Segment> :
+                                            </Segment> 
+                                            :
+                                            
                                             <CurrentReservation selectedDoctor={this.state.selectedDoctor} />
 
                                     }
@@ -101,7 +106,10 @@ class ReservationComponent extends Component{
                             </Grid.Row>
                         </Grid>
                         :
+                        role === "Admin" ?
                         <ReservationManage></ReservationManage>
+                        :
+                        <DoctorPage></DoctorPage>
                     }
                     
                 </Segment>

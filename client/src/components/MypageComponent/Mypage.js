@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Segment, List, Header, Table, Icon} from 'semantic-ui-react'
+import { Grid, Segment, List, Header, Table, Icon, Button, TextArea, Form, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
 
 import HeaderTemplate from "../Template/Header"
@@ -17,7 +17,10 @@ class Mypage extends Component {
             //banerImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQznb5ExwUrelpSWcGeXQtU2Z-sUOcSKzkrog&usqp=CAU",
 
         },
-        isWriting:false
+        isWriting:false,
+        successUpload:false,
+        isOpen:false,
+        isClicked : false,
     }
     onClickCounselingContent = ()=>{
         
@@ -32,7 +35,7 @@ class Mypage extends Component {
                                 navigation
                             </Grid.Column> */}
                             <Grid.Column>
-                                <Grid.Row>
+                                <Grid.Row onClick={()=>this.setState({isClicked:true, successUpload:true})}>
                                     <Header
                                         style={{ paddingBottom: '1.5em'}}
                                         as='h2'
@@ -94,39 +97,41 @@ class Mypage extends Component {
                                 <Header as="h3" content="상담하기" onClick={()=>{this.setState({isWriting:!this.state.isWriting})}}/>
                                     {this.state.isWriting === false ? <Icon name="triangle down" /> : <Icon name="triangle up" />}
                             </Grid.Row>
-                            <Segment style={{marginLeft:"2.5em"}}>
-                                <Header as="h4" content={"담당 군의관 : " + this.props.selectDoctorName} color="grey"/>
-
-                                <DoctorList></DoctorList>
-                            </Segment>
                             <Grid.Row style={{marginLeft:"2.5em"}} rows={10}>
-                                {this.state.isWriting === true ? <></> : <UploadCounseling></UploadCounseling>}
+                                    {this.state.isWriting === true ? <></> :
+                                        <Grid style={{ marginLeft: "1em" }}>
+                                            <Segment style={{ marginLeft: "2.5em" }}>
+                                                <Header as="h4" content={"담당 군의관 : " + this.props.selectDoctorName} color="grey" />
+
+                                                <DoctorList></DoctorList>
+                                            </Segment>
+                                            <Grid.Row>
+                                                <Form size={"small"} style={{ width: "70em" }}>
+                                                    <TextArea placeholder='제목' rows={1} />
+                                                    <TextArea placeholder='상담글을 작성하세요.' />
+                                                    <input type="file" name="file" onChange={null} />
+                                                    <Button positive onClick={()=>{this.setState({successUpload:true})}}>상담하기  <Icon name="talk" style={{ marginLeft: "4px" }} /></Button>
+                                                </Form>
+                                            </Grid.Row>
+                                        </Grid>
+                                
+                                }
                             </Grid.Row>
                             
                                 <Grid.Row>
                                     <Grid.Column width={13} style={{ marginLeft: "2em" }}>
                                         <Table basic='very'>
                                             <Table.Body>
-                                                <Table.Row onClick={()=>{}}>
-                                                    <Table.Cell><Header as="h4" content="1" /></Table.Cell>
-                                                    <Table.Cell>배가..배가...레이서!</Table.Cell>
-                                                    <Table.Cell>처리중</Table.Cell>
-                                                </Table.Row>
-                                                <Table.Row>
-                                                    <Table.Cell><Header as="h4" content="2" /></Table.Cell>
-                                                    <Table.Cell>손바닥에 무좀이 생겼어요</Table.Cell>
-                                                    <Table.Cell>완료</Table.Cell>
-                                                </Table.Row>
-                                                <Table.Row>
-                                                    <Table.Cell><Header as="h4" content="3" /></Table.Cell>
-                                                    <Table.Cell>탈모인가봐요</Table.Cell>
-                                                    <Table.Cell>완료</Table.Cell>
-                                                </Table.Row>
-                                                <Table.Row>
-                                                    <Table.Cell><Header as="h4" content="4" /></Table.Cell>
-                                                    <Table.Cell>목도붓고 피나는 입몸병엔 이가탄</Table.Cell>
-                                                    <Table.Cell>처리중</Table.Cell>
-                                                </Table.Row>
+                                                {this.state.successUpload ?
+                                                    <Table.Row onClick={() => {this.setState({isOpen:true})}}>
+                                                        <Table.Cell><Header as="h4" content="1" /></Table.Cell>
+                                                        <Table.Cell>배가 아파요</Table.Cell>
+                                                        <Table.Cell>{this.state.isClicked ? "처리완료" : "처리중"}</Table.Cell>
+                                                    </Table.Row>
+                                                    :
+                                                    <></>
+                                                }
+                                                
                                             </Table.Body>
                                         </Table>
                                     </Grid.Column>
@@ -134,6 +139,25 @@ class Mypage extends Component {
                             </Grid>
                         </Grid.Row>
                     </Grid>
+                    <Modal
+                        closeIcon
+                        open={this.state.isOpen}
+                        key={"Reservation.number"}
+                        onClose={() => this.setState({ isOpen: false })}
+                        onOpen={() => this.setState({ isOpen: true })}
+                    >
+                        <Header icon='archive' content='답변' />
+                        <Modal.Content>
+                            <p>
+                                복통 발생은 여러가지 이유가 있을 수 있기 때문에 자세한 정보를 얻기 원한다면 내원해보시는 것을 권고합니다. <br />
+                            </p>
+                        </Modal.Content>
+                        <Modal.Actions>
+                            <Button color='red' onClick={() => this.setState({ isOpen: false })}>
+                                <Icon name='remove' /> 확인
+                            </Button>
+                        </Modal.Actions>
+                    </Modal>
                 </Segment>
             </HeaderTemplate>
             
