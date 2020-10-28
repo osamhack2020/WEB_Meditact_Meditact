@@ -136,8 +136,8 @@
    Response : 
 
    ```json
-   {
-     [{
+   [
+     {
        "username": "string",
        "email": "user@example.com",
        "role": "string",
@@ -151,8 +151,8 @@
        "email": "user1@example.com",
        "role": "string1",
        "posts":[]
-     }]
-   }
+     }
+    ]
    ```
 
 <div style="page-break-after: always; break-after: page;"></div>
