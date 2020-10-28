@@ -2,7 +2,7 @@
 
 국군 의료 상담 AI챗봇 및 플랫폼 [**_Meditact_**](http://35.224.66.230/)
 
-![logo](./src/logo.png)
+![logo](./src/logo2.png)
 
 ---
 
