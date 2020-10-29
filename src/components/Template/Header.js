@@ -109,7 +109,7 @@ class HeaderTemplate extends Component {
                   
                     <Link to={this.props.isLogin ? "/mypage" : "/login"} style={null}>
                         <Button as='a' inverted={!fixed}>
-                            {this.props.isLogin ? "MyPage" : "Login"}
+                            {this.props.isLogin ? "My conuslt" : "Login"}
                         </Button>
                     </Link>
                   {this.props.isLogin ? 
