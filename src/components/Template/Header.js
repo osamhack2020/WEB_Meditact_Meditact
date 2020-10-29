@@ -8,13 +8,14 @@ import * as Scroll from "react-scroll"
 import {
   Button,
   Container,
+  Grid,
   Header,
   Icon,
   Menu,
   Segment,
   Visibility,
 } from 'semantic-ui-react'
-import mainBaner from "../../images/mainBaner.jpg";
+import mainBaner from "../../images/BanerTest/1.png";
 
 const {Media } = createMedia({
   breakpoints: {
@@ -60,7 +61,7 @@ class HeaderTemplate extends Component {
     const { children, mobile } = this.props
     const { fixed } = this.state
     const banerImage = this.props.banerInformation.banerImage;
-    console.log(banerImage);
+    console.log(banerImage+"+++++++++++++++++++++++");
     
     //페이지 전체 렌더링
     return (
@@ -72,9 +73,10 @@ class HeaderTemplate extends Component {
         >
           <Segment
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em',backgroundImage:`url(${mainBaner})` }}
+            style={{ minHeight: 700, padding: '1em 0em'}}
             vertical
           >
+            <img src={banerImage || mainBaner} style={{position:"absolute", width:"100%", height:"100%", top:"0", left:"0", zIndex:"-99"}}/>
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -147,11 +149,21 @@ class HeaderTemplate extends Component {
                 }}
               />
               {this.props.banerInformation.isMain ? 
-                <Button primary size='huge'>
-                예약하기
-                <Icon name='right arrow' />
-              </Button>
-              :
+                <Grid verticalAlign="center" padded="3em">
+                  <Link to="/reservation" style={null}>
+                    <Button size='huge' content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0"}}>
+                      진료예약
+                      <Icon name='right arrow' />
+                    </Button>
+                  </Link>
+                  <Link to="/mypage" style={null}>
+                    <Button size='huge' content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0"}}>
+                      상담하기
+                      <Icon name='right arrow' />
+                    </Button>
+                  </Link>
+                </Grid>
+                :
               <></>
               }
                 

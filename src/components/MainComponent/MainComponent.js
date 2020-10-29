@@ -16,7 +16,7 @@ const { MediaContextProvider} = createMedia({
 const state = {
   banerInformation:{
     title:"군생활을 안전하게 보내자!",
-    subTitle:"간편하고 신속한 예약서비스",
+    subTitle:"간편하고 신속한 진료예약 및 건강상담 서비스",
     isMain:true,
   }
 }

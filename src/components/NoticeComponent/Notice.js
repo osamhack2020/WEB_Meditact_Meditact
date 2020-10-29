@@ -4,11 +4,11 @@ import { Grid, Segment, List, Header } from 'semantic-ui-react'
 class Notice extends Component {
     state = {
         NoticesInformation:[
-            {number:1, title:"이것은 테스트입니다라라라라라리리리용", uploadTime:"20/10/05",viewCount:10},
-            {number:2, title:"test2",uploadTime:"20/10/05", viewCount:20},
-            {number:2, title:"test3",uploadTime:"20/10/05", viewCount:20},
-            {number:2, title:"test4",uploadTime:"20/10/05", viewCount:20},
-            {number:2, title:"test5",uploadTime:"20/10/05", viewCount:20},
+            {number:1, title:"<긴급> 병원 전체 휴일 안내.", uploadTime:"20/10/05",viewCount:10},
+            {number:2, title:"정기 건강검진 안내",uploadTime:"20/10/05", viewCount:20},
+            {number:2, title:"진료예약이 잠시 중단됩니다.",uploadTime:"20/10/05", viewCount:20},
+            {number:2, title:"병원 내 흡연장 사용 안내",uploadTime:"20/10/05", viewCount:20},
+            {number:2, title:"코로나19 상황에 대비하는 알맞은 자세",uploadTime:"20/10/05", viewCount:20},
         ],
         listSrc:null,
         SetNoti:()=>{},

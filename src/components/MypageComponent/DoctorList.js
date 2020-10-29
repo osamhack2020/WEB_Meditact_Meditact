@@ -17,7 +17,7 @@ class DoctorList extends Component{
     componentDidMount(){
         const doctorList = this.props.doctorsInfo.map(
             (doctor) => 
-                <Button color="green" style={{marginLeft:"0.2em"}} onClick={()=>this.SelectDoctor(doctor.name)}>{doctor.name}</Button>
+                <Button content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0", marginLeft:"0.2em"}} onClick={()=>this.SelectDoctor(doctor.name)}>{doctor.name}</Button>
         )
         this.setState({doctorListSrc:doctorList});
     }

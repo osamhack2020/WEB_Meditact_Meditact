@@ -1,33 +1,39 @@
 import React, { Component } from 'react'
 import { Grid, Segment, List, Header, Table, Icon, Button, TextArea, Form, Modal} from 'semantic-ui-react'
 import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
 
 import HeaderTemplate from "../Template/Header"
 import UploadCounseling from "./UploadCounseling"
 import DoctorList from "./DoctorList";
 import thumbnail from "../../images/thumbnail.jpeg"
-
+import mainBaner from "../../images/BanerTest/6.png"
 class Mypage extends Component {
 
     state={
         banerInformation:{
-            title:"마이페이지",
+            title:"나의 건강 관리",
             subTitle:null,
             isMain:false,
-            //banerImage:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQznb5ExwUrelpSWcGeXQtU2Z-sUOcSKzkrog&usqp=CAU",
+            banerImage:mainBaner,
 
         },
         isWriting:false,
         successUpload:false,
         isOpen:false,
         isClicked : false,
+    }    
+    NoLogin(){
+        alert("login!!");
+        this.props.history.push("/login");
     }
-    onClickCounselingContent = ()=>{
-        
+    componentDidMount(){
+        this.props.isLogin ? this.setState({isLogin:true}) : this.NoLogin();
+        console.log(this.props.isLogin)
     }
     render(){
         return (
-            <HeaderTemplate banerInformation={this.state.banerInformation}>
+            <HeaderTemplate banerInformation={this.state.banerInformation} isLogin={this.state.isLogin}>
                 <Segment>
                     <Grid container stackable style={{ paddingTop: "2em" }}>
                         <Grid.Row>
@@ -39,7 +45,7 @@ class Mypage extends Component {
                                     <Header
                                         style={{ paddingBottom: '1.5em'}}
                                         as='h2'
-                                        content='내 정보'
+                                        content='나의 건강 정보'
                                     />
                                     <Grid style={{border:"solid 1px rgba(34,36,38,.15)", borderRadius:".28571429rem"}}>
                                         <Grid.Row style={{display:"flex", flexDirection:"column", alignItems:"center", borderWidth:"0px", boxShadow:"none"}}>
@@ -100,7 +106,7 @@ class Mypage extends Component {
                             <Grid.Row style={{marginLeft:"2.5em"}} rows={10}>
                                     {this.state.isWriting === true ? <></> :
                                         <Grid style={{ marginLeft: "1em" }}>
-                                            <Segment style={{ marginLeft: "2.5em" }}>
+                                            <Segment style={{  }}>
                                                 <Header as="h4" content={"담당 군의관 : " + this.props.selectDoctorName} color="grey" />
 
                                                 <DoctorList></DoctorList>
@@ -110,7 +116,7 @@ class Mypage extends Component {
                                                     <TextArea placeholder='제목' rows={1} />
                                                     <TextArea placeholder='상담글을 작성하세요.' />
                                                     <input type="file" name="file" onChange={null} />
-                                                    <Button positive onClick={()=>{this.setState({successUpload:true})}}>상담하기  <Icon name="talk" style={{ marginLeft: "4px" }} /></Button>
+                                                    <Button content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0"}} onClick={()=>{this.setState({successUpload:true})}}>상담하기  <Icon name="talk" style={{ marginLeft: "4px" }} /></Button>
                                                 </Form>
                                             </Grid.Row>
                                         </Grid>
@@ -168,9 +174,10 @@ class Mypage extends Component {
 
 let mapStateToProps = (state) => {
     return {
-        selectDoctorName: state.doctor.selectDoctorName
+        selectDoctorName: state.doctor.selectDoctorName,
+        isLogin:state.user.isLogin
     };
 }
 Mypage = connect(mapStateToProps)(Mypage);
 
-export default Mypage;
+export default withRouter(Mypage);

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import logo from "../../images/logo1.png"
 class Signup extends Component{
   state = {
     inputEmail : "",
@@ -41,8 +42,8 @@ class Signup extends Component{
     return(
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> 계정을 생성하세요!
+          <Header as='h2' style={{color:"#F13962"}} textAlign='center'>
+            <Image src={logo} /> 계정을 생성하세요!
           </Header>
           <Form size='large'>
             <Segment stacked>
@@ -87,7 +88,7 @@ class Signup extends Component{
                 value={this.state.inputWeight}
                 onChange = {(e) => this.handleChange(e, "Weight")}
               />
-              <Button color='teal' fluid size='large' onClick={this.onTryLogin}>
+              <Button style={{ backgroundColor:"#F13962", color:"#FCF0F0"}} fluid size='large' onClick={this.onTryLogin}>
                 SignUp
             </Button>
             </Segment>

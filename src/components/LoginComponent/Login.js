@@ -3,7 +3,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import { connect } from 'react-redux';
 import {withRouter} from "react-router-dom";
 import {registerSuccess} from "../../actions";
-
+import logo from "../../images/logo1.png"
 class Login extends Component{
   state = {
     inputEmail : "",
@@ -49,8 +49,8 @@ class Login extends Component{
     return(
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> Log-in to your account
+          <Header as='h2' content='Red' style={{color:"#F13962"}} textAlign='center'>
+            <Image src={logo} /> Log-in to your account
           </Header>
           <Form size='large'>
             <Segment stacked>
@@ -72,7 +72,7 @@ class Login extends Component{
                 onChange = {(e) => this.handleChange(e, "password")}
               />
 
-              <Button color='teal' fluid size='large' onClick={this.onTryLogin}>
+              <Button style={{ backgroundColor:"#F13962", color:"#FCF0F0"}} fluid size='large' onClick={this.onTryLogin}>
                 Login
             </Button>
             </Segment>

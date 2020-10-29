@@ -4,7 +4,7 @@ import { Grid, Segment,  Header, Dropdown, Icon, GridRow, Button } from 'semanti
 import { connect } from 'react-redux';
 import cheerio from "cheerio";
 import axios from "axios";
-
+import mainBaner from "../../images/BanerTest/3.png"
 class Document extends Component{
     state={
         isLogin:false,
@@ -12,6 +12,7 @@ class Document extends Component{
             title:"병원정보안내",
             subTitle:null,
             isMain:false,
+            banerImage:mainBaner,
           },
         }
     constructor(props){
