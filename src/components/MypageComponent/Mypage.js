@@ -143,7 +143,7 @@ class Mypage extends Component {
                                                 {this.state.successUpload ?
                                                     <Table.Row onClick={() => {this.setState({isOpen:true})}}>
                                                         <Table.Cell><Header as="h4" content="1" /></Table.Cell>
-                                                        <Table.Cell>배가 아파요</Table.Cell>
+                                                        <Table.Cell>피부 발진</Table.Cell>
                                                         <Table.Cell>{this.state.isClicked ? "처리완료" : "처리중"}</Table.Cell>
                                                     </Table.Row>
                                                     :
@@ -167,7 +167,7 @@ class Mypage extends Component {
                         <Header icon='archive' content='답변' />
                         <Modal.Content>
                             <p>
-                                복통 발생은 여러가지 이유가 있을 수 있기 때문에 자세한 정보를 얻기 원한다면 내원해보시는 것을 권고합니다. <br />
+                                접촉성 피부염이 의심됩니다. 스테로이드 연고 처방이 필요합니다. 가까운 시일 내로 국군수도병원 피부과를 방문해주세요. <br />
                             </p>
                         </Modal.Content>
                         <Modal.Actions>

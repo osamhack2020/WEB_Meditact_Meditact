@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {Card, Image, Button, Grid, Segment, Header, Table, TextArea, Modal, Icon} from 'semantic-ui-react'
 import {setDoctorcardIndex} from "../../actions";
 import HeaderTemplate from "../Template/Header"
-
+import leg from "../../images/leg.png";
 class DoctorPage extends Component{
     state={
         isLogin:false,
@@ -80,7 +80,7 @@ class DoctorPage extends Component{
                             <Table.Body>
                                 <Table.Row onClick={() => {this.setState({isOpen:true})}}>
                                     <Table.Cell><Header as="h4" content="1" /></Table.Cell>
-                                    <Table.Cell>배가 아파요.</Table.Cell>
+                                    <Table.Cell>피부 발진</Table.Cell>
                                     <Table.Cell>{this.state.isSuccess}</Table.Cell>
                                 </Table.Row>
                             </Table.Body>
@@ -94,6 +94,10 @@ class DoctorPage extends Component{
                         onOpen={() => this.setState({ isOpen: true })}
                     >
                         <Header icon='archive' content='소중한 의견을 남겨주세요 !' />
+                        <Modal.Content>
+                            <Header as="h3" content='증상 : 어젯밤부터 발목에 빨간 점이 올라와요. 사진 한번만 봐주세요!' />
+                            <Image src={leg}/>
+                        </Modal.Content>
                         <Modal.Content>
                             <TextArea placeholder="상담 답변 작성" style={{width:"100%"}} />
                         </Modal.Content>

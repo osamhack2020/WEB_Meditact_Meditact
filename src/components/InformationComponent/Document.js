@@ -43,7 +43,7 @@ class Document extends Component{
                                 <Header
                                     style={{ paddingBottom: '1.5em' }}
                                     as='h2'
-                                    content='예약하기'
+                                    content='병원 정보'
                                 />
 
                             </Grid.Column>
