@@ -28,7 +28,8 @@
 </table>
 
 ## 컴퓨터 구성 / 필수 조건 안내 
-
+- 브라우저 지원 버젼
+!["browser img"](/src/images/forReadme/browser.png)
 
 ## 디자인 구성
 
@@ -71,7 +72,6 @@
         - 제목과 본문을 나누어 제목을 통해 어드민(or 군의관)이 본문을 유추할 수 있게끔 구성하였습니다.
 
 ## 각 페이지별 구성 기능
-*※페이지의 배너 이미지는 수정 예정입니다.*
 
  * 메인 페이지<br>
 <table>
@@ -86,11 +86,11 @@
     </tbody>
 </table>
 
- * 예약 페이지<br>
+ * 예약 페이지(User)<br>
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/reservation.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/reservation(user).png" width="40%" height="40%"></a></div></td>
             <td width="33%"> 군의관 리스트 출력 </td>
         </tr>
         <tr>
@@ -102,7 +102,7 @@
     </tbody>
 </table>
 
- * 예약 페이지 *예약하기 클릭 시*<br>
+ * 예약 페이지 (User)*예약하기 클릭 시*<br>
 <table>
     <tbody>
         <tr>
@@ -117,11 +117,35 @@
         </tr>
     </tbody>
 </table>
+ * 예약 페이지(Admin)<br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/reservation(admin).png" width="40%" height="40%"></a></div></td>
+            <td width="33%"> 예약현황 출력 </td>
+        </tr>
+        <tr>
+            <td>예약 승인 / 거부 기능</td>
+        </tr>>
+    </tbody>
+</table>
+ * 예약 페이지(Medic)<br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/reservation(medic).png" width="40%" height="40%"></a></div></td>
+            <td width="33%"> 승인된 예약 현황 </td>
+        </tr>
+        <tr>
+            <td>등록된 상담 확인 기능</td>
+        </tr>
+    </tbody>
+</table>
   * 마이 페이지<br>
 <table>
     <tbody>
         <tr>
-            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/mypage.png" width="40%" height="40%"></a></div></td>
+            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/my_consult.png" width="40%" height="40%"></a></div></td>
             <td width="33%">사용자의 소속 부대 정보 출력</td>
         </tr>
         <tr>
@@ -129,6 +153,15 @@
         </tr>
         <tr>
             <td>상담 게시판 사용 기능</td>
+        </tr>
+    </tbody>
+</table>
+  * 정보 페이지<br>
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="6"><div align="center"><img src="/src/images/forReadme/information.png" width="40%" height="40%"></a></div></td>
+            <td width="33%">기제된 정보가 출력된 국군수도병원 페이지로 리디렉션</td>
         </tr>
     </tbody>
 </table>

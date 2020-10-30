@@ -158,7 +158,7 @@ class HeaderTemplate extends Component {
                   </Link>
                   <Link to="/mypage" style={null}>
                     <Button size='huge' content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0"}}>
-                      상담하기
+                      건강상담
                       <Icon name='right arrow' />
                     </Button>
                   </Link>

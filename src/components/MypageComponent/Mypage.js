@@ -81,6 +81,18 @@ class Mypage extends Component {
                                                             <Table.Cell><Header as="h4" content="소속부대"/></Table.Cell>
                                                             <Table.Cell>특전사령부 공중부양연대 MUSAT대대 삐삐중대</Table.Cell>
                                                         </Table.Row>
+                                                        <Table.Row>
+                                                            <Table.Cell><Header as="h4" content="키"/></Table.Cell>
+                                                            <Table.Cell>179cm</Table.Cell>
+                                                        </Table.Row>
+                                                        <Table.Row>
+                                                            <Table.Cell><Header as="h4" content="몸무계"/></Table.Cell>
+                                                            <Table.Cell>82kg</Table.Cell>
+                                                        </Table.Row>
+                                                        <Table.Row>
+                                                            <Table.Cell><Header as="h4" content="BMI 지수"/></Table.Cell>
+                                                            <Table.Cell>25.59 비만 1단계</Table.Cell>
+                                                        </Table.Row>
                                                     </Table.Body>
                                                 </Table>
                                             </Grid.Column>

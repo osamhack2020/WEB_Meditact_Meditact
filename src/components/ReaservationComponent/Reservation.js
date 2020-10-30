@@ -43,16 +43,6 @@ class ReservationComponent extends Component{
             selectedDoctor:null
             
         };
-        if(this.props.userInfo.role === "Medic"){
-            this.setState({
-                banerInformation : 
-                    {
-                        title:"환자안내",
-                        subTitle:null,
-                        isMain:false,
-                        banerImage:mainBaner,
-            }})
-        }
         this.props.initialDoctorsInfo(this.state.doctorsInfo);
     }
     NoLogin(){
@@ -69,8 +59,7 @@ class ReservationComponent extends Component{
         })
     }
     render(){
-        const role = this.props.userInfo.role;
-        console.log(role)
+        const role = this.props.userInfo.role || "";
         return(
             <HeaderTemplate 
                 banerInformation={this.state.banerInformation}

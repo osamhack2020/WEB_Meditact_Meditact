@@ -28,7 +28,7 @@ const doctorCardInitialState = {
 
 };
 const userIntialState = {
-    user:null,
+    user:{name:"", age:"", role:"",},
     isLogin:false,
 }
 
