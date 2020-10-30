@@ -65,7 +65,7 @@
 |모델명|LSTM|FastText|BERT|
 |분류 정확도|73.52%|37.44%|76.29%|
 
-- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 **누구나** 따라 할 수 있게 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
+- **오픈소스 해커톤**의 취지에 맞게, 각 모델의 생성과정을 **누구나** 따라 할 수 있도록 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
 
 #### 최종 배포용 모델 선정
 
