@@ -146,11 +146,12 @@ class HeaderTemplate extends Component {
                 style={{
                   fontSize: mobile ? '1.5em' : '1.7em',
                   fontWeight: 'normal',
-                  marginTop: mobile ? '0.5em' : '1.5em',
+                  // marginTop: mobile ? '0em' : '1.5em',
+                  
                 }}
               />
               {this.props.banerInformation.isMain ? 
-                <Grid verticalAlign="center" padded="3em">
+                <Grid verticalAlign="center" style={{marginTop:"6em", marginLeft:"1.8em"}}>
                   <Link to="/reservation" style={null}>
                     <Button size='huge' content='Red' style={{ backgroundColor:"#F13962", color:"#FCF0F0"}}>
                       진료예약

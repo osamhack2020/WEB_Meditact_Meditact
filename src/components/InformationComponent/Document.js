@@ -51,17 +51,22 @@ class Document extends Component{
                         <Grid.Row style={{minHeight:"50em"}}>
                             <Button.Group widths='5' width={20} style={{marginBottom:"30px"}}>
                                 <Button fluid color='violet' onClick={()=>{window.open('https://afmd.mnd.go.kr/mbshome/mbs/afmd/subview.jsp?id=afmd_030500000000')}}>
+                                <Icon style={{marginLeft:"0.5em"}} name="dochub" size="massive"/>
                                     <Header as="h2" style={{color:"#ffffff"}}>서류발급 안내</Header>
                                 </Button>
                                 <Button fluid  style={{marginLeft:"1em"}} color='pink' onClick={()=>{window.open('https://afmd.mnd.go.kr/mbshome/mbs/afmd/subview.jsp?id=afmd_030601000000')}}>
+                                <Icon style={{marginLeft:"0.5em"}} name="hospital outline" size="massive"/>
                                 <Header as="h2" style={{color:"#ffffff"}}>시설 안내</Header>
                                 </Button>
                             </Button.Group>
                             <Button.Group widths='5'n width={20}>
+                                
                                 <Button fluid color='teal' onClick={()=>{window.open('https://afmd.mnd.go.kr/mbshome/mbs/afmd/subview.jsp?id=afmd_030300000000')}}>
-                                <Header as="h2" style={{color:"#ffffff"}}>건강검진 안내</Header>
+                                <Icon style={{marginLeft:"0.5em"}} name="doctor" size="massive"/>
+                                    <Header as="h2" style={{color:"#ffffff"}}>건강검진 안내</Header>
                                 </Button>
                                 <Button fluid style={{marginLeft:"1em"}} color='red' onClick={()=>{window.open('https://afmd.mnd.go.kr/mbshome/mbs/afmd/subview.jsp?id=afmd_030700000000')}}>
+                                <Icon style={{marginLeft:"0.5em"}} name="location arrow" size="massive"/>
                                 <Header as="h2" style={{color:"#ffffff"}}>오시는 길</Header>
                                 </Button>
                             </Button.Group>
