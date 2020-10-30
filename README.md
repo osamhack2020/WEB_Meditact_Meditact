@@ -36,7 +36,7 @@
 
 #### 데이터 전처리
 
-<img src="./src/konlp.png" width="250"/>
+<img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/konlp.png" width="250"/>
 
 - python의 **re**와 **konlp** 패키지를 이용하여 형태소를 분석하여 명사를 추출하여 데이터를 전처리하였습니다.
 
