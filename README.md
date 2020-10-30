@@ -264,6 +264,7 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 - ECMAScript 6 지원 브라우저 사용
 
 - 브라우저 지원 버젼
+
 !["browser img"](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/client/src/images/forReadme/browser.png)
 
 ## 기술 스택 (Technique Used)
