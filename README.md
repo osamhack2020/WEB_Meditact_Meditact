@@ -1,4 +1,4 @@
-## Meditact
+# Meditact
 
 국군 장병을 위한 AI 기반 비대면 의료 서비스 Meditact [**_Meditact_**](http://35.224.66.230/)
 
