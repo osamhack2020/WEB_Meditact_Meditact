@@ -137,13 +137,17 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 
 ### Infra Structure
 
-Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니다.
+Google Cloud Platform을 기반으로 채팅 앱을 컨테이너화 했습니다.
 
 도커로 만들어진 컨테이너는 쿠버네티스가 컨트롤 합니다.
 
-쿠버네티스는 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
+쿠버네티스와 로드밸런스가 24시간동안 무중단으로 챗봇이 작동하는 것을 돕습니다.
 
-[![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)](https://postimg.cc/xqh0LTY4)
+또한 Github Repository에 소스가 push되어 수정되면, 자동으로 build하여 업데이트 되도록 세팅하였습니다.
+
+![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)
+
+
 
 ## 컴퓨터 구성 / 필수 조건 안내 (Prerequisites)
 
@@ -196,8 +200,8 @@ Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니�
         <td width="60">
             <div align="center"><a href="https://redux.js.org/" target="_blank"> <img src="https://e7.pngegg.com/pngimages/413/852/png-clipart-redux-react-logo-javascript-dq-purple-violet-thumbnail.png" alt="redux" width="40" height="40"/> </a><br>redux</br></div>
         </td>
-        <td width="60">
-            <div align="center"><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank"> <img src="https://lh3.googleusercontent.com/vCbHTO3hh4rIPl5XPab0ZXYEY1kmwzHvbvd3CPcXxunuCSn8ouz54Kc6xuxR88RP83bErQOt4Q=w128-h128-e365" alt="redux" width="40" height="40"/> </a><br>redux-devtool</br></br></div>
+        <td>
+            <div align="center"><a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank"> <img src="https://lh3.googleusercontent.com/vCbHTO3hh4rIPl5XPab0ZXYEY1kmwzHvbvd3CPcXxunuCSn8ouz54Kc6xuxR88RP83bErQOt4Q=w128-h128-e365" alt="redux" height="40"/> </a><br>redux-devtool</br></div>
         </td>
     </tr>
 </tbody>
@@ -227,7 +231,7 @@ Google Cloud Platform 을 기반으로 채팅 앱을 컨테이너화 했습니�
        <td width="60">
             <div align="center"><a href="https://mongoosejs.com/" target="_blank"> <img src="https://cms-assets.tutsplus.com/uploads/users/34/posts/29527/preview_image/mongoose.jpg" alt="MONGODB" width="40" height="40"/> </a><br>mongoose</br></div>
         </td>
-​</tbody>
+</tbody>
 </table>
 
 ### Infra
