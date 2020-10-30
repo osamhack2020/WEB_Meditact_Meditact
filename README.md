@@ -60,13 +60,12 @@
 
 - LSTM, FastText, BERT 3가지 자연어 처리 모델 개발 및 성능 분석
 
-    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8ac1b7f5-0718-4ffb-a28e-9759de06f561%2F_2020-10-29__1.47.42.png?table=block&id=62db217e-62de-4826-8d7f-e43a0a43616a&width=2820&userId=&cache=v2" width="550"/>
-
+||<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F61edec61-392c-495a-a64e-24dd86f7da29%2F_2020-10-30__7.55.59.png?table=block&id=bd02b5bd-79a0-4e7d-891b-d658ad05b7b3&width=820&userId=&cache=v2" width="200"/>|<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F244a7a6a-bb5e-4e93-b218-c5a800384724%2F_2020-10-30__7.56.02.png?table=block&id=d08359bb-717f-4055-b8be-4fa413979be6&width=2880&userId=&cache=v2" width="200"/>|<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff182dc83-a064-4594-987a-89d62890a626%2F_2020-10-30__7.56.05.png?table=block&id=80cd0bcd-e151-432a-9b4a-3d2f22778505&width=1030&userId=&cache=v2" width="200"/>|
+|:----:|:----:|:--------:|:-----:|
 |모델명|LSTM|FastText|BERT|
-|----|----|--------|-----|
 |분류 정확도|73.52%|37.44%|76.29%|
 
-- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 누구나 따라 할 수 있게 [Github](https://github.com/osamhack2020/Infra_Meditact_Meditact/tree/master/models)에 JupyterNotebook(.ipynb)로 제공하였습니다.
+- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 **누구나** 따라 할 수 있게 [Github](https://github.com)에 JupyterNotebook(.ipynb) 파일을 제공하였습니다.
 
 #### 최종 배포용 모델 선정
 
