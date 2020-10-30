@@ -75,7 +75,7 @@
 
 ### Web Front-end
 
-#### 디자인 구성
+#### 디자인에 사용한 패키지와 이유
 
 | semantic ui |  styled-component|
 |:----------:| :--------: |
