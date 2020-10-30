@@ -25,15 +25,14 @@
 
 ### Deep Learning
 
-#### 데이터 수집
+#### 데이터셋 구축
 
-<img src="./src/hidoc.png" width="1000"/>
+- [하이닥](https://www.hidoc.co.kr/)이라는 플랫폼의 질문을 스크래핑하여  11만 8008개의 데이터를 확보하였습니다.
+- 군의관이 직접 데이터 정리(cleaning) 및 라벨링(labeling)한 증상-진료과 데이터 5만 1134개 구축하였습니다.
+- [Github](https://github.com/osamhack2020/Infra_Meditact_Meditact/tree/master/data)과 [Kaggle](https://www.kaggle.com/hyeonhoonlee/classification-of-symptom)을 통해 데이터셋을 공개하였습니다.
 
-- [하이닥](https://www.hidoc.co.kr)이라는 플랫폼의 질문을 스크래핑하여 데이터를 수집하였습니다.
+<img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd8b82b6e-82ed-4a56-8035-1ef46e409699%2F_2020-10-30__4.38.28.png?table=block&id=cf90258b-e3dc-4ef3-80c8-60b9dfc1c035&width=4090&userId=&cache=v2" width="1000"/>
 
-- 하이닥의 질문은 진료과로 분류가 되어있기에 그것을 이용하여 라벨링을 하였습니다.
-
-- 라벨링 후 train을 위한 데이터와 validate를 위한 데이터를 분리하였습니다.
 
 #### 데이터 전처리
 
@@ -42,19 +41,37 @@
 - python의 **re**와 **konlp** 패키지를 이용하여 형태소를 분석하여 명사를 추출하여 데이터를 전처리하였습니다.
 
 
-#### LSTM모델을 이용한 자연어 처리
+#### 탐색적 데이터 분석
 
-<img src="./src/number.png" width="500"/>
+- 진료과별 데이터 현황
 
-- 전처리 된 데이터 중 빈도 상위 15000개가량 추출 후 해당 명사를 빈도 순위에 따른 숫자로 치환하였습니다.
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F7ff9db8d-dc06-4335-92f6-8574f6e79b48%2F111.png?table=block&id=d1ad8778-22a4-45c7-88f9-0930e6e8ccb1&width=2350&userId=&cache=v2" width="750"/>
 
-<img src="./src/padding.png" width="250"/>
+- 각 문장별 단어 갯수 분석
 
-- 데이터가 처음 전처리 된 상태에서는 길이가 일정하지 않은 상태이기에(문장별 명사 수가 제각각) 길이를 일정하게 만들기 위해 padding을 이용하여 처리하였습니다.
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8955d36d-5df7-4b23-8aec-09d3345219bb%2F333.png?table=block&id=13c22bbb-c41c-46fa-a555-742cc81e9d36&width=670&userId=&cache=v2" width="550"/>
 
-- LSTM모델을 train하여 prediction을 할 수 있도록 모델을 생성하였습니다. 
+- 워드클라우드를 통한 다빈도 단어 분석
 
-- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 누구나 따라 할 수 있게 Github에 JupyterNotebook(.ipynb)로 제공하였습니다.
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F750d0344-c8d4-4c8f-8693-9ce7852534e7%2F222.png?table=block&id=d8f7dc7c-181f-4335-b876-cacf4e51c1bf&width=700&userId=&cache=v2" width="550"/>
+
+
+#### 진료과 분류 딥러닝 모델 개발
+
+- LSTM, FastText, BERT 3가지 자연어 처리 모델 개발 및 성능 분석
+
+    <img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F8ac1b7f5-0718-4ffb-a28e-9759de06f561%2F_2020-10-29__1.47.42.png?table=block&id=62db217e-62de-4826-8d7f-e43a0a43616a&width=2820&userId=&cache=v2" width="550"/>
+
+|모델명|LSTM|FastText|BERT|
+|----|----|--------|-----|
+|분류 정확도|73.52%|37.44%|76.29%|
+
+- **오픈소스 해커톤**의 취지에 맞게 각 모델의 생성과정을 누구나 따라 할 수 있게 [Github](https://github.com/osamhack2020/Infra_Meditact_Meditact/tree/master/models)에 JupyterNotebook(.ipynb)로 제공하였습니다.
+
+#### 최종 배포용 모델 선정
+
+- BERT 모델이 약 2.7% 더 좋은 성능을 보였으나, 기본 사이즈의 Google cloud vm instance를 사용하는 상황에 큰 용량의 모델을 사용하는 건 위험성 높다고 판단하였습니다.
+- 따라서, 성능이 유사하면서도 가볍고 호환성이 높은 LSTM 모델을 최종적으로 선택하였습니다.
 
 
 ### Web Front-end
