@@ -259,6 +259,8 @@ User, Post, Appt ( 유저, 글쓰기, 예약 ) 3가지 API를 구성하였으며
 
 - Github Repository에 소스가 push되어 수정되면, 자동으로 build하여 업데이트 되도록 세팅하였습니다.
 
+[![automated-Build.gif](https://i.postimg.cc/wvM9R1c8/automated-Build.gif)](https://postimg.cc/R3kkjVDX)
+
 ![meditact-Infra.png](https://i.postimg.cc/yYYk4kGs/meditact-Infra.png)
 
 
