@@ -36,7 +36,10 @@
 
 - <a href="https://drive.google.com/drive/folders/11_kpVcOpbCIaYFENpywC9GHO2Axen6XJ?usp=sharing">영상 다운로드 링크</a>
 
-#### [발표자료](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/Meditact_final.pdf)
+#### 발표자료 :point_down:
+
+<a href="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/Meditact_final.pdf"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/pptbutton.png" width="400"></a>
+
 
 ## 기능 설계
 
