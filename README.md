@@ -32,13 +32,8 @@
 - 진료 대기 시간을 최소화하고, 어렵게 군병원에 발걸음 하는 모든 장병들이 빠짐없이 최상의 의료서비스를 받을 수 있도록 온라인 진료 예약 서비스를 제공합니다.
 
 #### [프로젝트 설명 영상](https://youtu.be/rY56N51-jr8)
-<table>
-	<tr>
-		<td style="maxWidth:400px; maxHeghit:400px">
-			<a href="https://youtu.be/rY56N51-jr8"><img src="https://lh3.googleusercontent.com/9X0udBhZxuB2vaWuU5G76sTCqX4k6rScbxTT0ncK0UULDnEAGFGSJx_VCI6-g9WKF8rimivfoJlSw5l9_wLqyGMlhtdwXOfIVTN_rtOnMIh0-ZZH7Rm3PtPoctlSZMtrOhaXn30zNP7ylE0j96cdK9O4a-6f6MitC0sb7QoR_Nfm3FsPBW7Z4YBghGTnXp0c8Esh2aXlEfyqkdJ2W8ThoJL9cnmHVtb7BuBxZFfCHiJ6jWld9gmuOaK462K6hBBM3GUR1fJrnl-db-Q5-ePX_tkjiM4EUKb11LxEuBbnPOj8g7d5Lh3tMvRY1iKJTcl9hu2Qs2BxNW1pHqfIL_wO_RhtUmIvuO2da-xlggFwAq5piZ9In4baTwRl0t_KYUq7gXnfAu7Gisn7JkQIif90xvHB-YGBOj6HeGr3qMKP0b27CchOZmLKHh_YowRNnmAb4k5FpZk9vVV4lpsmFu8wkP2AHPzRyyMIY-Xs_XAuDoIPhcg3RCgzpSiKAQopWIcu_4BNB7neUSBNK_3Bi8XkIo7YuwImYnEPihDcCpu5THoH6VSRUr-5NmhDRMMP2qIF_dmhG73Xpte_TgfXhT8PWy-wn5TzQ7zaU2432cDHVzm3T3-WGdN-q0EQxPEa9QfVYMjCk_IHhOYFRluK9ZuWgTsLujjrsHQ1dRtTt232RVoa0DcOELbtZxZXFAXS=w198-h192-no?authuser=0"></a>
-		</td>
-	</tr>
-</table>
+
+<a href="https://youtu.be/rY56N51-jr8"><img src="https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/src/playbutton.jpg" width="100"></a>
 
 
 #### [발표자료](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/Meditact_final.pdf)
