@@ -448,6 +448,10 @@ $ yarn start ( or npm start )
 
 [기능설계](#기능-설계) 파트의 APIdocs를 참고하여 사용하실 수 있습니다.
 
+### Chatbot framework
+
+[**CHATBOT 설치방법 안내**](https://github.com/osamhack2020/Infra_Meditact_Meditact/tree/master/alpha)
+
 ## 팀 정보 (Team Information)
 
 - [김성일 상병](https://github.com/kshired) E-mail : [shiroed1211@gmail.com](mailto:shiroed1211@gmail.com), **팀장 및 Web-Backend**
