@@ -22,6 +22,20 @@
 - 진료 대기 시간을 최소화하고, 어렵게 군병원에 발걸음 하는 모든 장병들이 빠짐없이 최상의 의료서비스를 받을 수 있도록 온라인 진료 예약 서비스를 제공합니다.
 
 #### [프로젝트 설명 영상]()
+<table>
+	<tr>
+		<td>
+			<a href="https://youtu.be/rY56N51-jr8"><img src="https://lh3.googleusercontent.com/jym2UnnCMPf4f53Zu7PZN6-_uf7u1Xktx0WqabTzckFEOSPbKmi1Jw4LixLT8OhJ7Vi_syiwUnE4C7ltzJTTzDsIOCnK_hfcpg_0l5JSoe4cX1j7gIDE1t2WfAP1U727P7h6jtS6zrcAaHMmIo7CWsrfiGc9tny0eNjm74paqgVaCp2oaiB0B9UsIYHMQVQzCjZACdkdnBnBBz7vY5-zThzKuSrIA_cXu8zuPbIKZ1zi50r0Z1V6ySPKZQCaKBLeq2S6CiVwS-dzL9HQBceBlZMaCNHBd7qPXSwr-hX1COzEuePlyt2nRGl5pqUt0lWH_ETA8Tyz-437TOotRbNF8Kpb58ODNMqlLBj46rxQJLh1CO1oZC8GXi_Or5MpLH_kr2k6hXP2F3Hknmyn6gXF_WD4er7tL4yyqxt5S-t7E-cpkI9WA2IUlnu1hUajbhtlbG96dwSskdZLNQYNA4qRWi6iymOtUEvCl6Zd7AevWIrvr7fbk9PPgXbwRgES1FMUP7gGTsHADaCOR0islRP8GXAa0Yhrug6kQA4MjoVSlb_ZI238fSOmN8dNUxmRpRxt_7PsrFOKK7-eETu5OriXDHummxlk8seIYv-u3LAFCJeGlEPhw4EWiQ6LSOH5-Bo5NIC7FIAFXYr3s08vj1MFzfVApWAoRG1lUpYZ1klmjBVU7yOm_BRXThDDkpOX=w1624-h1362-no?authuser=0"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<b>프로젝트 시연 영상</b>
+		</td>
+
+	</tr>
+</table>
+
 
 #### [발표자료]()
 
