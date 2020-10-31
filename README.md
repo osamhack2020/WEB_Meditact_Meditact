@@ -30,7 +30,7 @@
 #### 4. 온라인 진료 예약 서비스
 - 진료 대기 시간을 최소화하고, 어렵게 군병원에 발걸음 하는 모든 장병들이 빠짐없이 최상의 의료서비스를 받을 수 있도록 온라인 진료 예약 서비스를 제공합니다.
 
-#### [프로젝트 설명 영상]()
+#### [프로젝트 설명 영상](https://youtu.be/rY56N51-jr8)
 <table>
 	<tr>
 		<td style="maxWidth:400px; maxHeghit:400px">
@@ -40,7 +40,7 @@
 </table>
 
 
-#### [발표자료]()
+#### [발표자료](https://github.com/osamhack2020/WEB_Meditact_Meditact/blob/main/Meditact_final.pdf)
 
 ## 기능 설계
 
