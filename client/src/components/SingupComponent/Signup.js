@@ -93,7 +93,7 @@ class Signup extends Component{
             </Segment>
           </Form>
           <Message>
-            이미 가입되어 있나요? <a href='#'>Sign In</a>
+            이미 가입되어 있나요? <a href='/login'>Sign In</a>
           </Message>
         </Grid.Column>
       </Grid>
